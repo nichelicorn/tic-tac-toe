@@ -14,14 +14,40 @@ body {
 
 h1 {
   color: mintcream;
+  /* margin: .5em; */
+  margin: 1vw;
 }
 
-.player-1 {
+.player-stats {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 24%;
+  /* margin: 1em; */
+  margin: 2vw;
 }
 
 .game-table {
   display: flex;
   justify-content: center;
+  height: 100%;
+}
+
+.banner {
+  /* font-size: 3em; */
+  font-size: 5vw;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 73%;
+  /* margin: 1em; */
+  margin: 2vw;
+}
+
+.board-bckgrnd {
+  width: 30vw;
+  height: 30vw;
 }
