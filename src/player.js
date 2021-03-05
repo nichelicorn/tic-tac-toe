@@ -6,10 +6,10 @@ class Player {
   }
 
   saveWinsToStorage() {
-
+    // this method will save Player object to localStorage
   }
 
   retrieveWinsFromStorage() {
-
+    // this method will retrieve Player object from loaclStorage
   }
 }
