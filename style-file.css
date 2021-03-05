@@ -1,0 +1,66 @@
+* {
+  /* border: 1px solid lavender; */
+  font-family: 'Cabin Sketch', cursive;
+  margin: 0;
+}
+
+html,
+body {
+  background: url(assets/Chalkboard-background.jpg);
+  background-size: cover;
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  color: mintcream;
+  /* margin: .5em; */
+  margin: 1vw;
+}
+
+.player-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 24%;
+  /* margin: 1em; */
+  margin: 8vw 2vw 2vw 2vw;
+  /* margin-top: 8vw; */
+}
+
+.game-table {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.banner {
+  /* font-size: 3em; */
+  font-size: 5vw;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 73%;
+  /* margin: 1em; */
+  margin: 2vw;
+}
+
+.board-bckgrnd {
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 50vw;
+  height: 50vw;
+  /* background-color: honeydew; */
+  background: url(assets/chalk-rainbow.jpg);
+}
+
+.box {
+  width: 30%;
+  height: 30%;
+  background: url(assets/chalkboard-background.jpg);
+}
