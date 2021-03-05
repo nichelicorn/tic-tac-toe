@@ -1,5 +1,5 @@
 * {
-  border: 1px solid lavender;
+  /* border: 1px solid lavender; */
   font-family: 'Cabin Sketch', cursive;
   margin: 0;
 }
@@ -24,7 +24,8 @@ h1 {
   align-items: center;
   width: 24%;
   /* margin: 1em; */
-  margin: 2vw;
+  margin: 8vw 2vw 2vw 2vw;
+  /* margin-top: 8vw; */
 }
 
 .game-table {
@@ -48,6 +49,18 @@ h1 {
 }
 
 .board-bckgrnd {
-  width: 30vw;
-  height: 30vw;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 50vw;
+  height: 50vw;
+  /* background-color: honeydew; */
+  background: url(assets/chalk-rainbow.jpg);
+}
+
+.box {
+  width: 30%;
+  height: 30%;
+  background: url(assets/chalkboard-background.jpg);
 }
