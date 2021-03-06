@@ -8,19 +8,16 @@ class Game {
   }
 
   startGame() { // add a button to start the game?
-  var whoFirst = Math.floor(Math.random() * 2);
-  if (whoFirst === 0) {
-    this.currentPlayer = this.player2;
-    // console.log("player2 gets to go first");
-    // console.log("the currentPlayer:", this.currentPlayer);
-  } else {
-    this.currentPlayer = this.player1;
-    // console.log("player1 gets to go first");
-    // console.log("the currentPlayer:", this.currentPlayer);
-  }
-  // console.log("who first?", whoFirst); // logs 0 or 1, can use this to identify which player will go first
-  // console.log("player1 id?", this.player1.id); // logs player1.id, 0
-  // console.log("player2", this.player2); // logs player2 object
+    var whoFirst = Math.floor(Math.random() * 2);
+    if (whoFirst === 0) {
+      this.currentPlayer = this.player2;
+      // console.log("player2 gets to go first");
+      // console.log("the currentPlayer:", this.currentPlayer);
+    } else {
+      this.currentPlayer = this.player1;
+      // console.log("player1 gets to go first");
+      // console.log("the currentPlayer:", this.currentPlayer);
+    }
   }
 
   // invoke startGame(); the player whose id is returned goes first
