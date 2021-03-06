@@ -20,11 +20,10 @@ class Game {
     }
   }
 
-  placeToken(event) { // this will need to take in the event to identify the clicked box's id
-    // use the id to splice?
-    console.log("click", event.target.id); // logs the click event's id!
+  placeToken(event) { // click is only reassigning a1 box
     // console.log("before newGame.gameBoard:", newGame.gameBoard);
     var clickedBox = event.target.id;
+    console.log("clicked box:", clickedBox); // logs the box id
     // now I have the id
     // I want to use the id to splice the value
     if (newGame.currentPlayer.id === 1) {
@@ -34,9 +33,28 @@ class Game {
       //   splice that box from the gameBoard and replace with player2's token
       newGame.gameBoard.splice(clickedBox, 1, "☮︎");
     }
-    // console.log("after newGame.gameBoard:", newGame.gameBoard);
+    console.log("after newGame.gameBoard:", newGame.gameBoard);
+
   }
+
+  takeTurns() {
+    if (this.currentPlayer === this.player1) {
+      this.currentPlayer = this.player2;
+    } else if (this.currentPlayer === this.player2) {
+      this.currentPlayer = this.player1;
+    }
+    console.log("the current player is:", this.currentPlayer);
+  }
+
 }
+
+
+// 🏁 WHAT IS NEXT?
+// switch turns
+// - 8) There will be a slight delay, then the next player is alerted to take their turn
+// after the click splices the gameBoard, the currentPlayer should be switched to the other player
+
+
 
 // 🗺 CURRENT PROGRESS
 // 1) can instantiate new game
@@ -47,21 +65,7 @@ class Game {
 //       logs the currentPlayer
 //   2b) method can be invoked again, and a new game will start:
 //       resets the currentPlayer and logs the currentPlayer
-
-// 🏁 WHAT IS NEXT?
-// √ invoke startGame(); the player whose id is returned goes first
-// - 6) The first player chooses a square on the board and clicks to mark the square with their token
-  // what should happen in this method?
-  // click happens
-  // which box was clicked?
-  // the box should be removed from the gameBoard
-  // should the box be reassigned the currentPlayer's markedBoxes? - this doesn't exist yet; not sure yet how I will approach the checkForWin method
-  // that box should be marked with the currentPlayer's token
-  // replace the box id with the token?
-
-
-// - 7) The token cannot be removed once placed!
-
+// 3) clicking on box a1 splices the currentPlayer's token into the gameBoard
 
 
 
@@ -86,6 +90,7 @@ class Game {
 
   // THIS COMMENTED OUT STUFF IS FROM THE FIRST ATTEMPT AT THE takeTurn FUNCTION - WENT OFF IN A WEIRD DIRECTION YESTERDAY AND WANT TO START FRESH! 🌤
   // takeTurn(event) {
+  // console.log("click", event.target.id); // logs the click event's id!
     // console.log("this.currentPlayer:", this.currentPlayer);
     // console.log("newGame.currentPlayer:", newGame.currentPlayer);
     // console.log("newGame.currentPlayer.id:", newGame.currentPlayer.id);
@@ -98,7 +103,6 @@ class Game {
       // } else if (this.currentPlayer === this.player1) {
         //   this.currentPlayer = this.player2;
         // }
-    // console.log("clicked box:", clickedBox); // logs the box id
     // for (var i = 0; i < newGame.gameBoard.length; i++) {
       // console.log("box:", newGame.gameBoard[i]); // logs all the boxes
     // console.log("gameBoard?", newGame.gameBoard); ///AUGH!!! this is logging the value of the newGame game board (the random value assigned to the game used for the console. Why isn't this.gameBoard working???)
@@ -126,7 +130,7 @@ class Game {
 // - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
 // - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
 
-// - 8) There will be a slight delay, then the next player is alerted to take their turn
+// - 7) The token cannot be removed once placed!
 // - 9) The next player chooses a square on the board and clicks to mark their square
 // - the board might now look something like this:
 // ___|_X_|___
@@ -190,3 +194,12 @@ class Game {
 // √ game should have an empty game board at the start of the Game
 // - 5) √ The game begins by randomly selecting the first player
 // whose turn is it? should that be in the constructor, or in a separate method?
+// √ invoke startGame(); the player whose id is returned goes first
+// - √ 6) The first player chooses a square on the board and clicks to mark the square with their token
+// what should happen in this method?
+// √ click happens
+// √ which box was clicked?
+// √ the box should be removed from the gameBoard
+// should the box be reassigned the currentPlayer's markedBoxes? - this doesn't exist yet; not sure yet how I will approach the checkForWin method
+// √ that box should be marked with the currentPlayer's token
+// √ replace the box id with the token?
