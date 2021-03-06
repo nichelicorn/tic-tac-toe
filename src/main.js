@@ -17,3 +17,8 @@ var boxC3 = document.getElementById("c3");
 // - Put a single handler on a container
 // - In the handler - check the source element using event.target
 // - If the event happened inside an element that interests us, then handle the event
+
+
+// 🤷‍♀️VARIABLES I MIGHT WANT TO USE LATER
+// var clickedBox = event.target.closest('.box');
+// var clickedBox = event.target.id;
