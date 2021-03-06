@@ -7,27 +7,47 @@ class Game {
     this.currentGameBoard = [];
   }
 
-  startGame() {
+  startGame() { // add a button to start the game?
   var whoFirst = Math.floor(Math.random() * 2);
   if (whoFirst === 0) {
     this.currentPlayer = this.player2;
-    console.log("player2 gets to go first");
-    console.log("the currentPlayer:", this.currentPlayer);
+    // console.log("player2 gets to go first");
+    // console.log("the currentPlayer:", this.currentPlayer);
   } else {
     this.currentPlayer = this.player1;
-    console.log("player1 gets to go first");
-    console.log("the currentPlayer:", this.currentPlayer);
+    // console.log("player1 gets to go first");
+    // console.log("the currentPlayer:", this.currentPlayer);
   }
-  console.log("who first?", whoFirst); // logs 0 or 1, can use this to identify which player will go first
+  // console.log("who first?", whoFirst); // logs 0 or 1, can use this to identify which player will go first
   // console.log("player1 id?", this.player1.id); // logs player1.id, 0
   // console.log("player2", this.player2); // logs player2 object
   }
 
-  takeTurn() {
+  // invoke startGame(); the player whose id is returned goes first
+  // from thereon, this function should keep track of whose turn it is
+  takeTurn(event) {
+    // console.log("click", event.target.id); // logs the click event's id!
+    var clickedBox = event.target.id;
+    console.log("clicked box:", clickedBox); // logs the box id
+    console.log("gameBoard:", this.gameBoard); // this.gameBoard is undefined
+    // iterate through gameBoard array
+    // for (var i = 0; i < this.gameBoard.length; i++) {
+      // console.log("box:", this.gameBoard[i]);
+    // }
+    // remove the item that matches the id returned
+    // push that item into the player's array
+    //I'm getting the clicked box - I know that I want to remove that from the gameBoard array
+    // do I also want to move that into a player array? seems like that might be too much?
+    // though this would follow the logic of then checking that player's array against the WINS arrays
 
-    // invoke startGame(); the player whose id is returned goes first
-    // from thereon, this function should keep track of whose turn it is
+    // this.currentPlayer will click on a box
+      // use the variables that select the boxes
+      // add the box id to the playerMarkers array
+      // that box will be added to their playerMarkers array??
+      // (DOM) if the box is clicked, add a token to the innerText
+      // (DOM) that box will display their token
   }
+  // the playerMarkers array will be cross-referenced to the currentGameBoard to discover if/when they have a win??
 }
 
 // Tic Tac Toe - How to play
