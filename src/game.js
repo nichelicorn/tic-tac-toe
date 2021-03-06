@@ -20,21 +20,36 @@ class Game {
     }
   }
 
-  placeToken(event) { // click is only reassigning a1 box
-    // console.log("before newGame.gameBoard:", newGame.gameBoard);
-    var clickedBox = event.target.id;
-    console.log("clicked box:", clickedBox); // logs the box id
-    // now I have the id
-    // I want to use the id to splice the value
-    if (newGame.currentPlayer.id === 1) {
-    //   splice that box from the gameBoard and replace with player1's token
-      newGame.gameBoard.splice(clickedBox, 1, "⚔︎");
-    } else if (newGame.currentPlayer.id === 0) {
-      //   splice that box from the gameBoard and replace with player2's token
-      newGame.gameBoard.splice(clickedBox, 1, "☮︎");
-    }
-    console.log("after newGame.gameBoard:", newGame.gameBoard);
+  placeToken(clickedBox) { // click is only reassigning a1 box
+    // console.log("before game.gameBoard:", game.gameBoard);
+    // var clickedBox = event.target.closest('.box');
+    // var clickedBox = event.target.id;
+    var clickedID = clickedBox.id;
+    console.log("clickedID:", clickedID);
+    for (var i = 0; i < this.gameBoard.length; i++) {
+      console.log("i:", this.gameBoard[i]); //logs each element in the gameBoard
+      var gameBoardID = this.gameBoard[i].id;
+      // console.log("gameBoardID:", gameBoardID);
+      if (clickedID === gameBoardID) {
+        this.gameBoard.splice(i, 1, this.currentPlayer.token); // ReferenceError: gameBoard is not defined at Game.placeToken;
 
+      }
+      // console.log("i id:", game.gameBoard[i].id); //logs each element in the gameBoard
+
+        // if (this.currentPlayer.id === 1) { // only works on box a1
+        //   //   splice that box from the gameBoard and replace with player1's token
+        //   this.gameBoard.splice(this.gameBoard[i], 1, "⚔︎");
+        // } else if (this.currentPlayer.id === 0) {
+        //   //   splice that box from the gameBoard and replace with player2's token
+        //   this.gameBoard.splice(this.gameBoard[i], 1, "☮︎");
+        // }
+      }
+
+  //   }
+  //   // now I have the id
+  //   // I want to use the id to splice the value
+    console.log("after splice this.gameBoard:", this.gameBoard);
+  //
   }
 
   takeTurns() {
@@ -58,10 +73,10 @@ class Game {
 
 // 🗺 CURRENT PROGRESS
 // 1) can instantiate new game
-//   1a) var newGame = new Game();
-//       logging newGame returns the newGame object
+//   1a) var game = new Game();
+//       logging game returns the game object
 // 2) can start a new game
-//   2a) newGame.startGame();
+//   2a) game.startGame();
 //       logs the currentPlayer
 //   2b) method can be invoked again, and a new game will start:
 //       resets the currentPlayer and logs the currentPlayer
@@ -92,8 +107,8 @@ class Game {
   // takeTurn(event) {
   // console.log("click", event.target.id); // logs the click event's id!
     // console.log("this.currentPlayer:", this.currentPlayer);
-    // console.log("newGame.currentPlayer:", newGame.currentPlayer);
-    // console.log("newGame.currentPlayer.id:", newGame.currentPlayer.id);
+    // console.log("game.currentPlayer:", game.currentPlayer);
+    // console.log("game.currentPlayer.id:", game.currentPlayer.id);
 
     // if (clickedBox === this.currentPlayer.id)
     // I want this function to switch between player1 and player2
@@ -103,9 +118,9 @@ class Game {
       // } else if (this.currentPlayer === this.player1) {
         //   this.currentPlayer = this.player2;
         // }
-    // for (var i = 0; i < newGame.gameBoard.length; i++) {
-      // console.log("box:", newGame.gameBoard[i]); // logs all the boxes
-    // console.log("gameBoard?", newGame.gameBoard); ///AUGH!!! this is logging the value of the newGame game board (the random value assigned to the game used for the console. Why isn't this.gameBoard working???)
+    // for (var i = 0; i < game.gameBoard.length; i++) {
+      // console.log("box:", game.gameBoard[i]); // logs all the boxes
+    // console.log("gameBoard?", game.gameBoard); ///AUGH!!! this is logging the value of the game game board (the random value assigned to the game used for the console. Why isn't this.gameBoard working???)
     // console.log("gameBoard:", this.gameBoard); // this.gameBoard is undefined
     // iterate through gameBoard array
     // remove the item that matches the id returned
