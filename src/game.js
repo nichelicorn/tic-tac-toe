@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player1 = new Player(0, "☮︎");
-    this.player2 = new Player(1, "⚔︎");
+    this.player1 = new Player(1, "⚔︎");
+    this.player2 = new Player(0, "☮︎");
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
     this.currentGameBoard = [];
   }
@@ -10,7 +10,14 @@ class Game {
   // - 5) The game begins by randomly selecting the first player
   startGame() {
   var whoFirst = Math.floor(Math.random() * 2);
-  console.log("who first?", whoFirst);
+  if (whoFirst === 0) {
+    // player2 gets to go first
+  } else {
+    // player1 gets to go first
+  }
+  console.log("who first?", whoFirst); // logs 0 or 1, can use this to identify which player will go first
+  // console.log("player1 id?", this.player1.id); // logs player1.id, 0
+  // console.log("player2", this.player2); // logs player2 object
   }
 }
 
