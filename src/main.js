@@ -1,5 +1,5 @@
 // GLOBAL VARIABLES 🌐
-var newGame = new Game();
+// var newGame = new Game();
 
 // QUERY SELECTORS 🕵️‍♀️
 var boxA1 = document.getElementById("a1");

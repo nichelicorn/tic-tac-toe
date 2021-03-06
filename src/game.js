@@ -23,14 +23,21 @@ class Game {
   // invoke startGame(); the player whose id is returned goes first
   // from thereon, this function should keep track of whose turn it is
   takeTurn(event) {
+    // I want this function to switch between player1 and player2
+    if (this.currentPlayer === this.player2) {
+      this.currentPlayer = this.player1;
+    } else if (this.currentPlayer === this.player1) {
+      this.currentPlayer = this.player2;
+    }
+  }
     // console.log("click", event.target.id); // logs the click event's id!
-    var clickedBox = event.target.id;
-    console.log("clicked box:", clickedBox); // logs the box id
-    console.log("gameBoard:", this.gameBoard); // this.gameBoard is undefined
+    // var clickedBox = event.target.id;
+    // console.log("clicked box:", clickedBox); // logs the box id
+    // for (var i = 0; i < newGame.gameBoard.length; i++) {
+      // console.log("box:", newGame.gameBoard[i]); // logs all the boxes
+    // console.log("gameBoard?", newGame.gameBoard); ///AUGH!!! this is logging the value of the newGame game board (the random value assigned to the game used for the console. Why isn't this.gameBoard working???)
+    // console.log("gameBoard:", this.gameBoard); // this.gameBoard is undefined
     // iterate through gameBoard array
-    // for (var i = 0; i < this.gameBoard.length; i++) {
-      // console.log("box:", this.gameBoard[i]);
-    // }
     // remove the item that matches the id returned
     // push that item into the player's array
     //I'm getting the clicked box - I know that I want to remove that from the gameBoard array
@@ -43,7 +50,6 @@ class Game {
       // that box will be added to their playerMarkers array??
       // (DOM) if the box is clicked, add a token to the innerText
       // (DOM) that box will display their token
-  }
   // the playerMarkers array will be cross-referenced to the currentGameBoard to discover if/when they have a win??
 }
 
