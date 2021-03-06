@@ -5,6 +5,11 @@ class Game {
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
     this.currentPlayer = undefined;
     this.currentGameBoard = [];
+    this.winningCombos = [
+      [a1, b1, c1], [a2, b2, c2], [a3, b3, c3],
+      [a1, a2, a3], [b1, b2, b3], [c1, c2, c3],
+      [a1, b2, c3], [a3, b2, c1]
+    ];
   }
 
   startGame() { // add a button to start the game?
@@ -40,10 +45,38 @@ class Game {
     console.log("the current player is:", this.currentPlayer);
   }
 
+  isThereAWinner() {
+    // if (any of the winningCombos are present in the currentGameBoard) {
+      // find out which player's tokens match the winningCombos value;
+      // add one to playerN's win count
+      // return playerN is the winner!
+    }
+  }
 }
 
 
 // 🏁 WHAT IS NEXT?
+// A way to check the Game’s board data for win conditions
+// - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
+  // √ create an array that holds all possible wins (this is an array of arrays; each data point will contain three box id's)
+
+// - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
+  // if none of the arrays above are possible, the game is a draw and no one wins
+
+// - 17) Board now has 5 tokens placed, and there is a possiblity for a win!
+  // a win is only possible once there are 5 tokens placed on the gameBoard
+  // a win is only possible once the currentGameBoard has 5+ tokens
+
+// - 18) Evaluate location of first players tokens
+  // check currentGameBoard against gameBoard
+  // map the currentGameBoard's tokens onto the currentGameBoard
+
+// - 19) If a row of 3 has been created, alert that first player has won!
+  // if one of the possible wins is detected, alert that the player whose tokens match the possible win has won!
+  // seems like this should only need to evaluate the currentPlayer
+
+// - 20) Then add a win to first player's win count
+// add one to currentPlayer's count 
 
 
 
@@ -68,11 +101,8 @@ class Game {
 
 // within the Game class, do these things:
 
-// - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
-// - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
 
-// - 7) The token cannot be removed once placed!
-// √ switch turns
+// - 7) The box cannot be marked again once a marker has been placed there
 // - 8) DOM ! METHOD game.placeToken() IN COMBINATION WITH game.takeTurns() WILL UPDATE THE DATA MODEL FOR THIS PIECE ! There will be a slight delay, then the next player is alerted to take their turn
 // after the click splices the gameBoard, the currentPlayer should be switched to the other player
 // - 9) √ The next player chooses a square on the board and !DOM!!!!!!!!! clicks to mark their square
@@ -90,10 +120,6 @@ class Game {
 // - 14) NO WINS POSSIBLE AT THIS STAGE
 // - 15) A win is not possible for an individual player until three of their tokens have been placed
 // - 16) First player takes another turn
-// - 17) Board now has 5 tokens placed, and there is a possiblity for a win!
-// - 18) Evaluate location of first players tokens
-// - 19) If a row of 3 has been created, alert that first player has won!
-// - 20) Then add a win to first player's win count
 // - Board looks like this, though:
 // _X_|_X_|_O_
 // ___|_X_|___
@@ -147,3 +173,4 @@ class Game {
 // should the box be reassigned the currentPlayer's markedBoxes? - this doesn't exist yet; not sure yet how I will approach the checkForWin method
 // √ that box should be marked with the currentPlayer's token
 // √ replace the box id with the token?
+// √ switch turns
