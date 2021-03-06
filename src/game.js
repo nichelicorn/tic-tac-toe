@@ -11,9 +11,9 @@ class Game {
   startGame() {
   var whoFirst = Math.floor(Math.random() * 2);
   if (whoFirst === 0) {
-    // player2 gets to go first
+    console.log("player2 gets to go first");
   } else {
-    // player1 gets to go first
+    console.log("player1 gets to go first");
   }
   console.log("who first?", whoFirst); // logs 0 or 1, can use this to identify which player will go first
   // console.log("player1 id?", this.player1.id); // logs player1.id, 0
