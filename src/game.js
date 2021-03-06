@@ -1,14 +1,17 @@
 class Game {
   constructor() {
-    this.player1 = new Player("One", "⚔︎");
-    this.player2 = new Player("Two", "☮︎");
-    this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3]; // instantiating a new game breaks at `a1` - ReferenceError: a1 is not defined; these will need query selectors to identify the section to add the marker to
+    this.player1 = new Player(0, "☮︎");
+    this.player2 = new Player(1, "⚔︎");
+    this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
     this.currentGameBoard = [];
   }
 
   // whose turn is it? should that be in the constructor, or in a separate method?
-
-
+  // - 5) The game begins by randomly selecting the first player
+  startGame() {
+  var whoFirst = Math.floor(Math.random() * 2);
+  console.log("who first?", whoFirst);
+  }
 }
 
 // Tic Tac Toe - How to play
@@ -22,11 +25,9 @@ class Game {
 // √ game should have two players
 // √ game should have an empty game board at the start of the Game
 
-
-
 // - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
 // - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
-// - 5) The game begins by randomly selecting the first player
+
 // - 6) The first player chooses a square on the board and clicks to mark the square with their token
 // - 7) The token cannot be removed once placed!
 // - 8) There will be a slight delay, then the next player is alerted to take their turn
