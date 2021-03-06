@@ -1,8 +1,9 @@
 class Game {
   constructor() {
-    this.player1 = new Player(id: "One", token: "⚔︎");
-    this.player2 = new Player(id: "Two", token: "☮︎");
-    this.gameBoard = []
+    this.player1 = new Player("One", "⚔︎");
+    this.player2 = new Player("Two", "☮︎");
+    this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3]; // instantiating a new game breaks at `a1` - ReferenceError: a1 is not defined; these will need query selectors to identify the section to add the marker to
+    this.currentGameBoard = [];
   }
 
   // whose turn is it? should that be in the constructor, or in a separate method?
@@ -17,9 +18,9 @@ class Game {
 // setup:
 // - 1) √ Two players, each has a different token
 //   - ex: first player, token = X; next player, token = O
-// - 2) One game board: a grid of nine squares, three high by three wide
-// game should have two players
-// game should have an empty game board at the start of the Game
+// - 2) √ One game board: a grid of nine squares, three high by three wide
+// √ game should have two players
+// √ game should have an empty game board at the start of the Game
 
 
 
