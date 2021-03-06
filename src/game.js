@@ -11,23 +11,74 @@ class Game {
     var whoFirst = Math.floor(Math.random() * 2);
     if (whoFirst === 0) {
       this.currentPlayer = this.player2;
-      // console.log("player2 gets to go first");
-      // console.log("the currentPlayer:", this.currentPlayer);
+      console.log("player2 gets to go first");
+      console.log("the currentPlayer:", this.currentPlayer);
     } else {
       this.currentPlayer = this.player1;
-      // console.log("player1 gets to go first");
-      // console.log("the currentPlayer:", this.currentPlayer);
+      console.log("player1 gets to go first");
+      console.log("the currentPlayer:", this.currentPlayer);
     }
   }
 
-  // invoke startGame(); the player whose id is returned goes first
-  // from thereon, this function should keep track of whose turn it is
+  placeToken(event) { // this will need to take in the event to identify the clicked box's id
+    // use the id to splice?
+    console.log("click", event.target.id); // logs the click event's id!
+    // if (the currentplayer's token is X) {
+    //   splice that box from the gameBoard and replace with player1's token
+    // } else if (the currentPlayer's token is O) {
+    //   splice that box from the gameBoard and replace with player2's token
+    // }
   }
+}
+
+// 🗺 CURRENT PROGRESS
+// 1) can instantiate new game
+//   1a) var newGame = new Game();
+//       logging newGame returns the newGame object
+// 2) can start a new game
+//   2a) newGame.startGame();
+//       logs the currentPlayer
+//   2b) method can be invoked again, and a new game will start:
+//       resets the currentPlayer and logs the currentPlayer
+
+// 🏁 WHAT IS NEXT?
+// √ invoke startGame(); the player whose id is returned goes first
+// - 6) The first player chooses a square on the board and clicks to mark the square with their token
+  // what should happen in this method?
+  // click happens
+  // which box was clicked?
+  // the box should be removed from the gameBoard
+  // should the box be reassigned the currentPlayer's markedBoxes? - this doesn't exist yet; not sure yet how I will approach the checkForWin method
+  // that box should be marked with the currentPlayer's token
+  // replace the box id with the token?
 
 
-  
+// - 7) The token cannot be removed once placed!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // THIS COMMENTED OUT STUFF IS FROM THE FIRST ATTEMPT AT THE takeTurn FUNCTION - WENT OFF IN A WEIRD DIRECTION YESTERDAY AND WANT TO START FRESH! 🌤
   // takeTurn(event) {
-    // console.log("click", event.target.id); // logs the click event's id!
     // console.log("this.currentPlayer:", this.currentPlayer);
     // console.log("newGame.currentPlayer:", newGame.currentPlayer);
     // console.log("newGame.currentPlayer.id:", newGame.currentPlayer.id);
@@ -59,7 +110,7 @@ class Game {
       // (DOM) if the box is clicked, add a token to the innerText
       // (DOM) that box will display their token
   // the playerMarkers array will be cross-referenced to the currentGameBoard to discover if/when they have a win??
-}
+
 
 // Tic Tac Toe - How to play
 
@@ -68,8 +119,6 @@ class Game {
 // - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
 // - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
 
-// - 6) The first player chooses a square on the board and clicks to mark the square with their token
-// - 7) The token cannot be removed once placed!
 // - 8) There will be a slight delay, then the next player is alerted to take their turn
 // - 9) The next player chooses a square on the board and clicks to mark their square
 // - the board might now look something like this:

@@ -13,12 +13,13 @@ var boxB3 = document.getElementById("b3");
 var boxC3 = document.getElementById("c3");
 
 // EVENT LISTENERS 🎧
-// boxA1.addEventListener("click", function);
-// boxB1.addEventListener("click", function);
-// boxC1.addEventListener("click", function);
-// boxA2.addEventListener("click", function);
-// boxB2.addEventListener("click", function);
-// boxC2.addEventListener("click", function);
-// boxA3.addEventListener("click", function);
-// boxB3.addEventListener("click", function);
-// boxC3.addEventListener("click", function);
+// boxA1.addEventListener("click", Game.placeToken); // this doesn't do anything! can't seem to read Game.placeToken
+boxA1.addEventListener("click", newGame.placeToken); // this works though...
+// boxB1.addEventListener("click", Game.placeToken);
+// boxC1.addEventListener("click", Game.placeToken);
+// boxA2.addEventListener("click", Game.placeToken);
+// boxB2.addEventListener("click", Game.placeToken);
+// boxC2.addEventListener("click", Game.placeToken);
+// boxA3.addEventListener("click", Game.placeToken);
+// boxB3.addEventListener("click", Game.placeToken);
+// boxC3.addEventListener("click", Game.placeToken);
