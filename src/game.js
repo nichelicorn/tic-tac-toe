@@ -22,16 +22,24 @@ class Game {
 
   // invoke startGame(); the player whose id is returned goes first
   // from thereon, this function should keep track of whose turn it is
-  takeTurn(event) {
-    // I want this function to switch between player1 and player2
-    if (this.currentPlayer === this.player2) {
-      this.currentPlayer = this.player1;
-    } else if (this.currentPlayer === this.player1) {
-      this.currentPlayer = this.player2;
-    }
   }
+
+
+  
+  // takeTurn(event) {
     // console.log("click", event.target.id); // logs the click event's id!
+    // console.log("this.currentPlayer:", this.currentPlayer);
+    // console.log("newGame.currentPlayer:", newGame.currentPlayer);
+    // console.log("newGame.currentPlayer.id:", newGame.currentPlayer.id);
     // var clickedBox = event.target.id;
+    // if (clickedBox === this.currentPlayer.id)
+    // I want this function to switch between player1 and player2
+    // if (this.currentPlayer === this.player2) {
+      //   this.currentPlayer = this.player1;
+      //
+      // } else if (this.currentPlayer === this.player1) {
+        //   this.currentPlayer = this.player2;
+        // }
     // console.log("clicked box:", clickedBox); // logs the box id
     // for (var i = 0; i < newGame.gameBoard.length; i++) {
       // console.log("box:", newGame.gameBoard[i]); // logs all the boxes

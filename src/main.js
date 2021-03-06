@@ -13,12 +13,12 @@ var boxB3 = document.getElementById("b3");
 var boxC3 = document.getElementById("c3");
 
 // EVENT LISTENERS 🎧
-boxA1.addEventListener("click", newGame.takeTurn);
-boxB1.addEventListener("click", newGame.takeTurn);
-boxC1.addEventListener("click", newGame.takeTurn);
-boxA2.addEventListener("click", newGame.takeTurn);
-boxB2.addEventListener("click", newGame.takeTurn);
-boxC2.addEventListener("click", newGame.takeTurn);
-boxA3.addEventListener("click", newGame.takeTurn);
-boxB3.addEventListener("click", newGame.takeTurn);
-boxC3.addEventListener("click", newGame.takeTurn);
+// boxA1.addEventListener("click", function);
+// boxB1.addEventListener("click", function);
+// boxC1.addEventListener("click", function);
+// boxA2.addEventListener("click", function);
+// boxB2.addEventListener("click", function);
+// boxC2.addEventListener("click", function);
+// boxA3.addEventListener("click", function);
+// boxB3.addEventListener("click", function);
+// boxC3.addEventListener("click", function);
