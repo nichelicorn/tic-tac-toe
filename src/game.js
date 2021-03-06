@@ -23,11 +23,18 @@ class Game {
   placeToken(event) { // this will need to take in the event to identify the clicked box's id
     // use the id to splice?
     console.log("click", event.target.id); // logs the click event's id!
-    // if (the currentplayer's token is X) {
+    // console.log("before newGame.gameBoard:", newGame.gameBoard);
+    var clickedBox = event.target.id;
+    // now I have the id
+    // I want to use the id to splice the value
+    if (newGame.currentPlayer.id === 1) {
     //   splice that box from the gameBoard and replace with player1's token
-    // } else if (the currentPlayer's token is O) {
-    //   splice that box from the gameBoard and replace with player2's token
-    // }
+      newGame.gameBoard.splice(clickedBox, 1, "⚔︎");
+    } else if (newGame.currentPlayer.id === 0) {
+      //   splice that box from the gameBoard and replace with player2's token
+      newGame.gameBoard.splice(clickedBox, 1, "☮︎");
+    }
+    // console.log("after newGame.gameBoard:", newGame.gameBoard);
   }
 }
 
@@ -82,7 +89,7 @@ class Game {
     // console.log("this.currentPlayer:", this.currentPlayer);
     // console.log("newGame.currentPlayer:", newGame.currentPlayer);
     // console.log("newGame.currentPlayer.id:", newGame.currentPlayer.id);
-    // var clickedBox = event.target.id;
+
     // if (clickedBox === this.currentPlayer.id)
     // I want this function to switch between player1 and player2
     // if (this.currentPlayer === this.player2) {

@@ -1,5 +1,5 @@
 // GLOBAL VARIABLES 🌐
-// var newGame = new Game();
+var newGame = new Game();
 
 // QUERY SELECTORS 🕵️‍♀️
 var boxA1 = document.getElementById("a1");
@@ -15,11 +15,11 @@ var boxC3 = document.getElementById("c3");
 // EVENT LISTENERS 🎧
 // boxA1.addEventListener("click", Game.placeToken); // this doesn't do anything! can't seem to read Game.placeToken
 boxA1.addEventListener("click", newGame.placeToken); // this works though...
-// boxB1.addEventListener("click", Game.placeToken);
-// boxC1.addEventListener("click", Game.placeToken);
-// boxA2.addEventListener("click", Game.placeToken);
-// boxB2.addEventListener("click", Game.placeToken);
-// boxC2.addEventListener("click", Game.placeToken);
-// boxA3.addEventListener("click", Game.placeToken);
-// boxB3.addEventListener("click", Game.placeToken);
-// boxC3.addEventListener("click", Game.placeToken);
+// boxB1.addEventListener("click", newGame.placeToken);
+// boxC1.addEventListener("click", newGame.placeToken);
+// boxA2.addEventListener("click", newGame.placeToken);
+// boxB2.addEventListener("click", newGame.placeToken);
+// boxC2.addEventListener("click", newGame.placeToken);
+// boxA3.addEventListener("click", newGame.placeToken);
+// boxB3.addEventListener("click", newGame.placeToken);
+// boxC3.addEventListener("click", newGame.placeToken);
