@@ -3,34 +3,36 @@ class Game {
     this.player1 = new Player(1, "⚔︎");
     this.player2 = new Player(0, "☮︎");
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
+    this.currentPlayer = undefined;
     this.currentGameBoard = [];
   }
 
-  // whose turn is it? should that be in the constructor, or in a separate method?
-  // - 5) The game begins by randomly selecting the first player
   startGame() {
   var whoFirst = Math.floor(Math.random() * 2);
   if (whoFirst === 0) {
+    this.currentPlayer = this.player2;
     console.log("player2 gets to go first");
+    console.log("the currentPlayer:", this.currentPlayer);
   } else {
+    this.currentPlayer = this.player1;
     console.log("player1 gets to go first");
+    console.log("the currentPlayer:", this.currentPlayer);
   }
   console.log("who first?", whoFirst); // logs 0 or 1, can use this to identify which player will go first
   // console.log("player1 id?", this.player1.id); // logs player1.id, 0
   // console.log("player2", this.player2); // logs player2 object
+  }
+
+  takeTurn() {
+
+    // invoke startGame(); the player whose id is returned goes first
+    // from thereon, this function should keep track of whose turn it is
   }
 }
 
 // Tic Tac Toe - How to play
 
 // within the Game class, do these things:
-
-// setup:
-// - 1) √ Two players, each has a different token
-//   - ex: first player, token = X; next player, token = O
-// - 2) √ One game board: a grid of nine squares, three high by three wide
-// √ game should have two players
-// √ game should have an empty game board at the start of the Game
 
 // - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
 // - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
@@ -91,3 +93,13 @@ class Game {
 // - 29) Delay, then wipe the board and restart with next player going First
 // - OR
 // - 29) Have a popup that asks if you want to play again
+
+
+// setup:
+// - 1) √ Two players, each has a different token
+//   - ex: first player, token = X; next player, token = O
+// - 2) √ One game board: a grid of nine squares, three high by three wide
+// √ game should have two players
+// √ game should have an empty game board at the start of the Game
+// - 5) √ The game begins by randomly selecting the first player
+// whose turn is it? should that be in the constructor, or in a separate method?
