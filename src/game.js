@@ -6,8 +6,18 @@ class Game {
     this.currentPlayer = undefined;
     this.currentGameBoard = [];
     this.winningCombos = [
-      ["a1", "b1", "c1"], ["a2", "b2", "c2"], ["a3", "b3", "c3"], ["a1", "a2", "a3"], ["b1", "b2", "b3"], ["c1", "c2", "c3"], ["a1", "b2", "c3"], ["a3", "b2", "c1"]
+      {row: ["a1", "b1", "c1"], count: 0},
+      {row: ["a2", "b2", "c2"], count: 0},
+      {row: ["a3", "b3", "c3"], count: 0},
+      {row: ["a1", "a2", "a3"], count: 0},
+      {row: ["b1", "b2", "b3"], count: 0},
+      {row: ["c1", "c2", "c3"], count: 0},
+      {row: ["a1", "b2", "c3"], count: 0},
+      {row: ["a3", "b2", "c1"], count: 0}
     ];
+    // this.winningCombos = [
+    //   ["a1", "b1", "c1"], ["a2", "b2", "c2"], ["a3", "b3", "c3"], ["a1", "a2", "a3"], ["b1", "b2", "b3"], ["c1", "c2", "c3"], ["a1", "b2", "c3"], ["a3", "b2", "c1"]
+    // ];
     // this.winningCombos = [
     //   [a1, b1, c1], [a2, b2, c2], [a3, b3, c3],
     //   [a1, a2, a3], [b1, b2, b3], [c1, c2, c3],
