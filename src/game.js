@@ -51,18 +51,19 @@ class Game {
   }
 
   checkForWinningCombos() {
-    // needs two parameters - the arrays to be compared
-    // this.currentGameBoard, this.winningCombos
-    // I think I need a for loop to actually compare the values; trying to use a .includes will just see if there is something exactly the same in the the test array
-
     for (var i = 0; i < this.currentGameBoard.length; i++) {
       console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
-      // if the i in currentGameBoard is found in any of the arrays in winningCombos,
-      for (var w = 0; w < this.winningCombos.length; w++) {
-        if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
-          this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
+      // var piece = this.currentGameBoard[i];
+      // if (piece.includes(this.currentPlayer.token)) {
+      //   console.log("the piece does include");
+        for (var w = 0; w < this.winningCombos.length; w++) { // none of these counts udpated with the if statement above
+          console.log("in the win loop");
+          if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
+            this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
+          // }
         }
       }
+      // if the i in currentGameBoard is found in any of the arrays in winningCombos,
     }
   }
       // what am I trying to do now??
