@@ -6,14 +6,14 @@ class Game {
     this.currentPlayer = undefined;
     this.currentGameBoard = [];
     this.winningCombos = [
-      {row: ["a1", "b1", "c1"], count: 0},
-      {row: ["a2", "b2", "c2"], count: 0},
-      {row: ["a3", "b3", "c3"], count: 0},
-      {row: ["a1", "a2", "a3"], count: 0},
-      {row: ["b1", "b2", "b3"], count: 0},
-      {row: ["c1", "c2", "c3"], count: 0},
-      {row: ["a1", "b2", "c3"], count: 0},
-      {row: ["a3", "b2", "c1"], count: 0}
+      {row: ["a1", "b1", "c1"], isWinner: false},
+      {row: ["a2", "b2", "c2"], isWinner: false},
+      {row: ["a3", "b3", "c3"], isWinner: false},
+      {row: ["a1", "a2", "a3"], isWinner: false},
+      {row: ["b1", "b2", "b3"], isWinner: false},
+      {row: ["c1", "c2", "c3"], isWinner: false},
+      {row: ["a1", "b2", "c3"], isWinner: false},
+      {row: ["a3", "b2", "c1"], isWinner: false}
     ];
   }
 
