@@ -50,36 +50,57 @@ class Game {
     console.log("the current player is:", this.currentPlayer);
   }
 
-  isThereAWinner() {
+  checkForWinningCombos() {
     // needs two parameters - the arrays to be compared
     // this.currentGameBoard, this.winningCombos
+    // I think I need a for loop to actually compare the values; trying to use a .includes will just see if there is something exactly the same in the the test array
 
-    if (this.winningCombos.includes(this.currentGameBoard)) {
-      console.log("the if on 52 is true!");
-    } else {
-      console.log("that if on 52 is false");
+    for (var i = 0; i < this.currentGameBoard.length; i++) {
+      console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
+      // if the i in currentGameBoard is found in any of the arrays in winningCombos,
+      // tag that currentGameBoard[i] as a possibleWin
+      // if the currentGameBoard[i] has 3 tags, that array is a winner!
+      // add a count = 0 to the winning combos?
+      // in this case they would have to be objects, squares = "square strings", count = 0
+      // then
+      // if the i in currentGameBoard is present in any of the winningCombos objects {
+      //  obj.count += 1
+      // if the obj.count of any winningCombos array === 3 {
+      //  run the function that tests for a winners
+      //  console.log("this one is a winner!", winningCombos[i]);
+      // }
+      // }
+
     }
+  }
 
+
+    // if (this.winningCombos.includes(this.currentGameBoard)) { this is false
+      // if ()
+      //   console.log("the if on 52 is true!");
+      // } else {
+        //   console.log("that if on 52 is false");
+        // }
     // if (any of the winningCombos are present in the currentGameBoard) {
 
       // find out which player's tokens match the winningCombos value;
       // add one to playerN's win count
       // return playerN is the winner!
     // }
-  }
 
   playFiveRounds() {
     this.startGame();
-    game.placeToken(boxA1);
-    game.takeTurns();
-    game.placeToken(boxB1);
-    game.takeTurns();
-    game.placeToken(boxA2);
-    game.takeTurns();
-    game.placeToken(boxB2);
-    game.takeTurns();
-    game.placeToken(boxA3);
-    game.takeTurns();
+    this.placeToken(boxA1);
+    this.takeTurns();
+    this.placeToken(boxB1);
+    this.takeTurns();
+    this.placeToken(boxA2);
+    this.takeTurns();
+    this.placeToken(boxB2);
+    this.takeTurns();
+    this.placeToken(boxA3);
+    this.takeTurns();
+    this.checkForWinningCombos();
   }
 }
 
