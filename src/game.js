@@ -52,17 +52,17 @@ class Game {
   }
 
   checkForWinningCombos() {
-    for (var w = 0; w < this.winningCombos.length; w++) { // none of these counts udpated with the if statement above
-      for (var i = 0; i < this.currentGameBoard.length; i++) { // this is logging the value of each string in the currentGameBoard array;
+    for (var w = 0; w < this.winningCombos.length; w++) {
+      console.log("winningCombos[i]:", this.winningCombos[i]); // returns undefined ... huh ... what if this was inside the currentGameBoard for loop?
+      for (var i = 0; i < this.currentGameBoard.length; i++) {
         var piece = this.currentGameBoard[i];
-        console.log("piece i:", piece);
+        console.log("piece i:", piece); // logs each
+        // if (piece.length >= 3 { // maybe I shouldn't get ahead of myself... what is being returned for the winningCombos[i]?
+        //   replace winningCombos[i]
+        // })
+
         // if (piece.includes(this.currentPlayer.token)) { // this if statement isn't returning what I'm looking for - if the piece (this.currentGameBoard[i]) includes the current player token
           //   console.log("the piece does include");
-        console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
-          if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
-            this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
-          // }
-        }
       }
     }
   }
