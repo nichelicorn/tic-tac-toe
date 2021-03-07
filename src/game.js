@@ -51,13 +51,13 @@ class Game {
   }
 
   checkForWinningCombos() {
-    for (var i = 0; i < this.currentGameBoard.length; i++) {
-      console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
-      // var piece = this.currentGameBoard[i];
-      // if (piece.includes(this.currentPlayer.token)) {
-      //   console.log("the piece does include");
-        for (var w = 0; w < this.winningCombos.length; w++) { // none of these counts udpated with the if statement above
-          console.log("in the win loop");
+    for (var w = 0; w < this.winningCombos.length; w++) { // none of these counts udpated with the if statement above
+      console.log("in the win loop"); // gets into the loop, then nothing else is happening here, so, it skips down to line 56
+      for (var i = 0; i < this.currentGameBoard.length; i++) { // this is logging the value of each string in the currentGameBoard array;
+        // var piece = this.currentGameBoard[i];
+        // if (piece.includes(this.currentPlayer.token)) { // this if statement isn't returning what I'm looking for - if the piece (this.currentGameBoard[i]) includes the current player token
+          //   console.log("the piece does include");
+        console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
           if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
             this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
           // }
@@ -66,7 +66,33 @@ class Game {
       // if the i in currentGameBoard is found in any of the arrays in winningCombos,
     }
   }
+
+  // first attempt at this method - it's not currently working as desired
+  // try again, and this time look into the arrays in the opposite order
+//switch the count in the winningCombos objects to a boolean
+// then, if all three boxes have matching token values (contained within this.currentGameBoard), the player whose token matches the winningCombo is the winner!
+
+  // for (var i = 0; i < this.currentGameBoard.length; i++) {
+    //   console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
+    //   // var piece = this.currentGameBoard[i];
+    //   // if (piece.includes(this.currentPlayer.token)) { // this if statement isn't returning what I'm looking for - if the piece (this.currentGameBoard[i]) includes the current player token
+      //   //   console.log("the piece does include");
+      //     for (var w = 0; w < this.winningCombos.length; w++) { // none of these counts udpated with the if statement above
+        //       console.log("in the win loop");
+        //       if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
+          //         this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
+          //       // }
+          //     }
+          //   }
+          //   // if the i in currentGameBoard is found in any of the arrays in winningCombos,
+          // }
       // what am I trying to do now??
+      // if all the tokens are the same, add 3 to the winningCombos.count?
+      // if all the tokens in the winningCombos[i] are the same, return that as the winningCombo!
+      // alert which player's token has won
+      // if the winningCombos.includes three of the same token, that player has won!!
+
+
       // - the winningCombos are being incremented if the space is occupied
       // - the token occupying the space is not being identified
       // - next step is to identify if the winningCombos are only occupied by the same kind of token
