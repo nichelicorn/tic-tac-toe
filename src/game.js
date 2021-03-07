@@ -58,6 +58,16 @@ class Game {
     for (var i = 0; i < this.currentGameBoard.length; i++) {
       console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
       // if the i in currentGameBoard is found in any of the arrays in winningCombos,
+      for (var w = 0; w < this.winningCombos.length; w++) {
+        if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
+          console.log("HI!");
+          this.winningCombos[w].count++;
+        }
+        if (this.winningCombos[w].count >= 3) {
+          // console.log("this.currentPlayer:", this.currentPlayer);
+          console.log(`${this.currentPlayer.token} is the winner!`);
+        }
+      }
       // tag that currentGameBoard[i] as a possibleWin
       // if the currentGameBoard[i] has 3 tags, that array is a winner!
       // add a count = 0 to the winning combos?
