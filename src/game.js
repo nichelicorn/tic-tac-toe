@@ -35,7 +35,7 @@ class Game {
       var gameBoardID = this.gameBoard[i].id;
       if (clickedID === gameBoardID) {
         this.gameBoard.splice(i, 1, this.currentPlayer.token);
-        this.currentGameBoard.push(clickedID);
+        this.currentGameBoard.push(clickedID + this.currentPlayer.token);
       }
     }
     // console.log("after splice this.gameBoard:", this.gameBoard);
@@ -62,11 +62,22 @@ class Game {
         if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
           this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
         }
+      }
+    }
+  }
+      // what am I trying to do now??
+      // - the winningCombos are being incremented if the space is occupied
+      // - the token occupying the space is not being identified
+      // - next step is to identify if the winningCombos are only occupied by the same kind of token
+
+
+
+
+        // if
         // if (this.winningCombos[w].count >= 3) { // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
         //   // console.log("this.currentPlayer:", this.currentPlayer);
         //   console.log(`${this.currentPlayer.token} is the winner!`);
         // }
-      }
       // tag that currentGameBoard[i] as a possibleWin
       // if the currentGameBoard[i] has 3 tags, that array is a winner!
       // add a count = 0 to the winning combos?
@@ -79,8 +90,6 @@ class Game {
       //  console.log("this one is a winner!", winningCombos[i]);
       // }
       // }
-    }
-  }
 
   playFiveRounds() {
     this.startGame();
