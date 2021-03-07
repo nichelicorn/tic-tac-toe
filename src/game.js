@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.player1 = new Player(1, "⚔︎");
-    this.player2 = new Player(0, "☮︎");
+    this.player1 = new Player(1, "xXx");
+    this.player2 = new Player(0, "oOo");
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
     this.currentPlayer = undefined;
     // this.currentGameBoard = [];
@@ -53,7 +53,10 @@ class Game {
       if (theWinArray.includes(clickedID)) {
         console.log("hey clicked id!"); // this seems to be identifying that the array includes the clicked idea
         // NOW, HOW DO I GET THAT VALUE RETURNED TO ME???
-        console.log("index of clicked id?", theWinArray.indexOf(clickedID)); // this gives me the index; i should be able to use this to splice into theWinArray
+        // console.log("index of clicked id?", theWinArray.indexOf(clickedID)); // this gives me the index; i should be able to use this to splice into theWinArray
+        var marker = theWinArray.indexOf(clickedID);
+        console.log("marker:", marker);
+        theWinArray.splice(marker, 1, this.currentPlayer.token);
         // return that value to a variable
         // then use that variable to splice theWinArray
         // theWinArray.splice()
