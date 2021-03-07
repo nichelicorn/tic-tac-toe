@@ -16,16 +16,6 @@ class Game {
       {win: ["a1", "b2", "c3"], isWinner: false},
       {win: ["a3", "b2", "c1"], isWinner: false}
     ];
-    // this.winningCombos = [
-    //   {row: ["a1", "b1", "c1"], isWinner: false},
-    //   {row: ["a2", "b2", "c2"], isWinner: false},
-    //   {row: ["a3", "b3", "c3"], isWinner: false},
-    //   {row: ["a1", "a2", "a3"], isWinner: false},
-    //   {row: ["b1", "b2", "b3"], isWinner: false},
-    //   {row: ["c1", "c2", "c3"], isWinner: false},
-    //   {row: ["a1", "b2", "c3"], isWinner: false},
-    //   {row: ["a3", "b2", "c1"], isWinner: false}
-    // ];
   }
 
   startGame() { // add a button to start the game?
@@ -42,11 +32,12 @@ class Game {
   placeToken(clickedBox) {
     // console.log("before game.gameBoard:", game.gameBoard);
     var clickedID = clickedBox.id;
+    console.log("clickedID:", clickedID);
     for (var i = 0; i < this.gameBoard.length; i++) {
       var gameBoardID = this.gameBoard[i].id;
       if (clickedID === gameBoardID) {
         this.gameBoard.splice(i, 1, this.currentPlayer.token);
-        // spliceWin(clickedID)
+        this.spliceWin(clickedID)
         // this.currentGameBoard.splice(i, 1, clickedID + this.currentPlayer.token); splices in the id as a1TOKEN, b3TOKEN, etc
         // this.currentGameBoard.splice(i, 1, this.currentPlayer.token); // is this.currentGameBoard even necessary??
       }
@@ -55,11 +46,22 @@ class Game {
   }
 
   spliceWin(clickedID) {
-    
-
-    // want this method to replace the value in winningCombos.row with the clickedID if there is a box id match
-    // splice this.currentPlayer.token into the row index matching the clickedID
+    for (var i = 0; i < this.winningCombos.length; i++) {
+      // console.log("winningCombos[i].win:", this.winningCombos[i].win);
+      var theWinArray = this.winningCombos[i].win;
+      console.log("theWinArray:", theWinArray);
+      if (theWinArray.includes(clickedID)) {
+        console.log("hey clicked id!"); // this seems to be identifying that the array includes the clicked idea
+        // NOW, HOW DO I GET THAT VALUE RETURNED TO ME???
+        console.log("index of clicked id?", theWinArray.indexOf(clickedID)); // this gives me the index; i should be able to use this to splice into theWinArray
+        // return that value to a variable
+        // then use that variable to splice theWinArray
+        // theWinArray.splice()
+      }
+    }
   }
+  // want this method to replace the value in winningCombos.row with the clickedID if there is a box id match
+  // splice this.currentPlayer.token into the row index matching the clickedID
 
   takeTurns() {
     if (this.currentPlayer === this.player1) {
