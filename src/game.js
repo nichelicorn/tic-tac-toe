@@ -15,16 +15,6 @@ class Game {
       {row: ["a1", "b2", "c3"], count: 0},
       {row: ["a3", "b2", "c1"], count: 0}
     ];
-    // this.winningCombos = [
-    //   ["a1", "b1", "c1"], ["a2", "b2", "c2"], ["a3", "b3", "c3"], ["a1", "a2", "a3"], ["b1", "b2", "b3"], ["c1", "c2", "c3"], ["a1", "b2", "c3"], ["a3", "b2", "c1"]
-    // ];
-    // this.winningCombos = [
-    //   [a1, b1, c1], [a2, b2, c2], [a3, b3, c3],
-    //   [a1, a2, a3], [b1, b2, b3], [c1, c2, c3],
-    //   [a1, b2, c3], [a3, b2, c1]
-    // ]; // items in winningCombos are returns as arrays of elements
-    // currentGameBoard is returned as an array of strings
-    // change winningCombos to strings??
   }
 
   startGame() { // add a button to start the game?
@@ -80,23 +70,8 @@ class Game {
       //  console.log("this one is a winner!", winningCombos[i]);
       // }
       // }
-
     }
   }
-
-
-    // if (this.winningCombos.includes(this.currentGameBoard)) { this is false
-      // if ()
-      //   console.log("the if on 52 is true!");
-      // } else {
-        //   console.log("that if on 52 is false");
-        // }
-    // if (any of the winningCombos are present in the currentGameBoard) {
-
-      // find out which player's tokens match the winningCombos value;
-      // add one to playerN's win count
-      // return playerN is the winner!
-    // }
 
   playFiveRounds() {
     this.startGame();
@@ -112,6 +87,7 @@ class Game {
     this.takeTurns();
     this.checkForWinningCombos();
   }
+
 }
 
 
@@ -234,3 +210,32 @@ class Game {
 // √ that box should be marked with the currentPlayer's token
 // √ replace the box id with the token?
 // √ switch turns
+
+
+// PREVIOUS VERSIONS OF THIS.winningCombos
+// this.winningCombos = [
+  //   ["a1", "b1", "c1"], ["a2", "b2", "c2"], ["a3", "b3", "c3"], ["a1", "a2", "a3"], ["b1", "b2", "b3"], ["c1", "c2", "c3"], ["a1", "b2", "c3"], ["a3", "b2", "c1"]
+  // ];
+  // this.winningCombos = [
+    //   [a1, b1, c1], [a2, b2, c2], [a3, b3, c3],
+    //   [a1, a2, a3], [b1, b2, b3], [c1, c2, c3],
+    //   [a1, b2, c3], [a3, b2, c1]
+    // ]; // items in winningCombos are returns as arrays of elements
+    // currentGameBoard is returned as an array of strings
+    // change winningCombos to strings??
+
+
+
+    // PREVIOUS CODE IN checkForWinningCombos
+    // if (this.winningCombos.includes(this.currentGameBoard)) { this is false
+      // if ()
+      //   console.log("the if on 52 is true!");
+      // } else {
+        //   console.log("that if on 52 is false");
+        // }
+        // if (any of the winningCombos are present in the currentGameBoard) {
+
+          // find out which player's tokens match the winningCombos value;
+          // add one to playerN's win count
+          // return playerN is the winner!
+          // }
