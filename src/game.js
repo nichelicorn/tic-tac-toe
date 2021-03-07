@@ -60,13 +60,12 @@ class Game {
       // if the i in currentGameBoard is found in any of the arrays in winningCombos,
       for (var w = 0; w < this.winningCombos.length; w++) {
         if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
-          console.log("HI!");
-          this.winningCombos[w].count++;
+          this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
         }
-        if (this.winningCombos[w].count >= 3) {
-          // console.log("this.currentPlayer:", this.currentPlayer);
-          console.log(`${this.currentPlayer.token} is the winner!`);
-        }
+        // if (this.winningCombos[w].count >= 3) { // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
+        //   // console.log("this.currentPlayer:", this.currentPlayer);
+        //   console.log(`${this.currentPlayer.token} is the winner!`);
+        // }
       }
       // tag that currentGameBoard[i] as a possibleWin
       // if the currentGameBoard[i] has 3 tags, that array is a winner!
