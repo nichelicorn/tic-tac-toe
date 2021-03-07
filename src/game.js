@@ -52,11 +52,11 @@ class Game {
   }
 
   checkForWinningCombos() {
-    for (var w = 0; w < this.winningCombos.length; w++) {
-      console.log("winningCombos[i]:", this.winningCombos[i]); // returns undefined ... huh ... what if this was inside the currentGameBoard for loop?
       for (var i = 0; i < this.currentGameBoard.length; i++) {
         var piece = this.currentGameBoard[i];
         console.log("piece i:", piece); // logs each
+        for (var w = 0; w < this.winningCombos.length; w++) {
+          console.log("winningCombos[i]:", this.winningCombos[i]); // returns undefined ... huh ... what if this was inside the currentGameBoard for loop?
         // if (piece.length >= 3 { // maybe I shouldn't get ahead of myself... what is being returned for the winningCombos[i]?
         //   replace winningCombos[i]
         // })
