@@ -4,7 +4,8 @@ class Game {
     this.player2 = new Player(0, "☮︎");
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
     this.currentPlayer = undefined;
-    this.currentGameBoard = [];
+    // this.currentGameBoard = [];
+    this.currentGameBoard = ["a1", "b1", "c1", "a2", "b2", "c2", "a3", "b3", "c3"],
     this.winningCombos = [
       {row: ["a1", "b1", "c1"], isWinner: false},
       {row: ["a2", "b2", "c2"], isWinner: false},
@@ -35,7 +36,7 @@ class Game {
       var gameBoardID = this.gameBoard[i].id;
       if (clickedID === gameBoardID) {
         this.gameBoard.splice(i, 1, this.currentPlayer.token);
-        this.currentGameBoard.push(clickedID + this.currentPlayer.token);
+        this.currentGameBoard.splice(i, 1, clickedID + this.currentPlayer.token);
       }
     }
     // console.log("after splice this.gameBoard:", this.gameBoard);
@@ -52,9 +53,9 @@ class Game {
 
   checkForWinningCombos() {
     for (var w = 0; w < this.winningCombos.length; w++) { // none of these counts udpated with the if statement above
-      console.log("in the win loop"); // gets into the loop, then nothing else is happening here, so, it skips down to line 56
       for (var i = 0; i < this.currentGameBoard.length; i++) { // this is logging the value of each string in the currentGameBoard array;
-        // var piece = this.currentGameBoard[i];
+        var piece = this.currentGameBoard[i];
+        console.log("piece i:", piece);
         // if (piece.includes(this.currentPlayer.token)) { // this if statement isn't returning what I'm looking for - if the piece (this.currentGameBoard[i]) includes the current player token
           //   console.log("the piece does include");
         console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
@@ -63,9 +64,21 @@ class Game {
           // }
         }
       }
-      // if the i in currentGameBoard is found in any of the arrays in winningCombos,
     }
   }
+    // first loop looks at this.winningCombo.length √
+      // for each [i], do =>
+      // second loop - looks @ this.currentGameBoard √
+      // for each [i], do =>
+        // look @ this.winningCombos[i], do =>
+        // if this.currentGameBoard[i].id is found in this.winningCombos[i]
+          // reassign this.winningCombos[i].row to be an array of the tokens found in this.currentGameBoard
+
+          // if the token in currentGameBoard is found in winningCombos, switch out that value with the current player's tokens
+          // i think this might need to happen earlier
+
+          // on click, assign the current player's token to a placeholder value
+          // the placeholder value could then reassign the values contained within the winningCombos with the current player's token
 
   // first attempt at this method - it's not currently working as desired
   // try again, and this time look into the arrays in the opposite order
@@ -78,6 +91,7 @@ class Game {
     //   // if (piece.includes(this.currentPlayer.token)) { // this if statement isn't returning what I'm looking for - if the piece (this.currentGameBoard[i]) includes the current player token
       //   //   console.log("the piece does include");
       //     for (var w = 0; w < this.winningCombos.length; w++) { // none of these counts udpated with the if statement above
+      // console.log("in the win loop"); // gets into the loop, then nothing else is happening here, so, it skips down to line 56
         //       console.log("in the win loop");
         //       if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
           //         this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
