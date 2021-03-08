@@ -10,6 +10,8 @@ var turnLine = document.getElementById("turnLine");
 var xWins = document.getElementById("xWins");
 var gameBox = document.getElementById("gameBox")
 
+var resetMsg = document.getElementById("resetMsg");
+
 // EVENT LISTENERS 🎧
 boardBckgrnd.addEventListener("click", markTheBoard);
 bttnStartGame.addEventListener("click", startGamePlay);
@@ -40,13 +42,14 @@ function announceGameEnd() {
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
     boardBckgrnd.classList.add("no-click");
     displayWins();
-    // resetGameBoard();
+    setTimeout(timeoutNextGame, 7000);
   } else if (game.playCount >= 9 && !game.hasWinner) {
-    console.log("nobody won");
+    // console.log("nobody won");
+    turnLine.classList.add("hidden");
     playerLine.innerText = "This game is a draw. Nobody won!";
     boardBckgrnd.classList.add("no-click");
     displayWins();
-    // resetGameBoard();
+    setTimeout(timeoutNextGame, 7000);
   }
 }
 
@@ -57,8 +60,12 @@ function displayWins() {
   oWins.innerText = `${oWinCount}!`;
 }
 
+function timeoutNextGame() {
+  game.resetBoard();
+  resetGameBoard();
+}
+
 function resetGameBoard() {
-  game.resetBoard(); // gameBoard data is reset; player wins have persisted
   a1.innerText = "";
   b1.innerText = "";
   c1.innerText = "";
@@ -74,10 +81,9 @@ function resetGameBoard() {
 }
 
 
+
+
 // 🏁 WHAT IS NEXT?
-// - [ ] Automatically reset the game board to allow for a new game to be played after the previous game is won
-// √ Game class data will be reassigned
-// - [ ] add timeout to start new game
 
 
 
@@ -87,5 +93,8 @@ function resetGameBoard() {
 // - [ ] when should this be called?
 // - [ ] eventually, on page load
 // - √ for now, when the win happens, in announceGameEnd
+// - √ Automatically reset the game board to allow for a new game to be played after the previous game is won
+// √ Game class data will be reassigned
+// - √ add timeout to start new game
 
 // - [ ] adjust CSS sizing - too big when in full screen mode
