@@ -1,13 +1,13 @@
 class Game {
   constructor() {
-    this.player1 = new Player(1, "xXx");
-    this.player2 = new Player(0, "oOo");
+    this.player1 = new Player(1, "X");
+    this.player2 = new Player(0, "O");
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
     this.currentPlayer = undefined;
     // this.currentGameBoard = [];
     // this.currentGameBoard = ["a1", "b1", "c1", "a2", "b2", "c2", "a3", "b3", "c3"],
     this.winningCombos = [
-      {win: [this.gameBoard[0], this.gameBoard[1], this.gameBoard[2]], isWinner: false}, //this doesn't get reassigned when the clicks happen
+      {win: ["a1", "b1", "c1"], isWinner: false},
       {win: ["a2", "b2", "c2"], isWinner: false},
       {win: ["a3", "b3", "c3"], isWinner: false},
       {win: ["a1", "a2", "a3"], isWinner: false},
@@ -30,7 +30,6 @@ class Game {
   }
 
   placeToken(clickedBox) {
-    // console.log("before game.gameBoard:", game.gameBoard);
     var clickedID = clickedBox.id;
     console.log("clickedID:", clickedID);
     for (var i = 0; i < this.gameBoard.length; i++) {
@@ -38,33 +37,42 @@ class Game {
       if (clickedID === gameBoardID) {
         this.gameBoard.splice(i, 1, this.currentPlayer.token);
         this.spliceWin(clickedID)
-        // this.currentGameBoard.splice(i, 1, clickedID + this.currentPlayer.token); splices in the id as a1TOKEN, b3TOKEN, etc
-        // this.currentGameBoard.splice(i, 1, this.currentPlayer.token); // is this.currentGameBoard even necessary??
       }
     }
-    // console.log("after splice this.gameBoard:", this.gameBoard);
   }
 
   spliceWin(clickedID) {
     for (var i = 0; i < this.winningCombos.length; i++) {
-      // console.log("winningCombos[i].win:", this.winningCombos[i].win);
+      var theWinCombos = this.winningCombos[i];
       var theWinArray = this.winningCombos[i].win;
-      console.log("theWinArray:", theWinArray);
+      // console.log("theWinArray:", theWinArray);
       if (theWinArray.includes(clickedID)) {
-        console.log("hey clicked id!"); // this seems to be identifying that the array includes the clicked idea
-        // NOW, HOW DO I GET THAT VALUE RETURNED TO ME???
-        // console.log("index of clicked id?", theWinArray.indexOf(clickedID)); // this gives me the index; i should be able to use this to splice into theWinArray
+        // console.log("hey clicked id!");
         var marker = theWinArray.indexOf(clickedID);
-        console.log("marker:", marker);
+        // console.log("marker:", marker);
         theWinArray.splice(marker, 1, this.currentPlayer.token);
-        // return that value to a variable
-        // then use that variable to splice theWinArray
-        // theWinArray.splice()
+        this.checkForWinningCombos(theWinArray); // might not need this - look for the property within the object and update that - the checkForWinningCombos method is adding a new property to the array of tokens, not updating the existing object property
       }
     }
   }
-  // want this method to replace the value in winningCombos.row with the clickedID if there is a box id match
-  // splice this.currentPlayer.token into the row index matching the clickedID
+
+  checkForWinningCombos(theWinArray) {
+    // console.log("theWinCombos.isWinner:", theWinCombos.isWinner);
+    // var updateWinCondition = theWinCombos.isWinner;
+    // console.log("updateWinCondition:", updateWinCondition);
+    for (var i = 0; i < this.winningCombos.length; i++) {
+      if (theWinArray[0] === theWinArray[1] && theWinArray[1] === theWinArray[2]) {
+        console.log("one of these is true!");
+        console.log("updateWinCondition:", updateWinCondition);
+        updateWinCondition = true;
+        console.log("did the update work?", updateWinCondition);
+        // find which condition has three of the same values and return that value - should this be assigned as a variable?
+      }
+    }
+  }
+  //   // console.log("theWinArray[0]:", theWinArray["0"]);
+  //     console.log("the win array:", theWinArray);
+  //   // if this.winningCombos contains an array of three of the same tokens, return a winner
 
   takeTurns() {
     if (this.currentPlayer === this.player1) {
@@ -73,10 +81,6 @@ class Game {
       this.currentPlayer = this.player1;
     }
     console.log("the current player is:", this.currentPlayer);
-  }
-
-  checkForWinningCombos() {
-    // if this.winningCombos contains an array of three of the same tokens, return a winner
   }
 
   playFiveRounds() {
