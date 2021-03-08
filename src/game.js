@@ -22,10 +22,10 @@ class Game {
     var whoFirst = Math.floor(Math.random() * 2);
     if (whoFirst === 0) {
       this.currentPlayer = this.player2;
-      console.log("player2 gets to go first!");
+      console.log("O gets to go first!");
     } else {
       this.currentPlayer = this.player1;
-      console.log("player1 gets to go first!");
+      console.log("X gets to go first!");
     }
   }
 
