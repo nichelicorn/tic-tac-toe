@@ -104,5 +104,7 @@ class Game {
     ];
     this.hasWinner = false;
     this.playCount = 0;
+    console.log("Next game starts in 1000");
+    // setTimeout(nextGame, 1000);
   }
 }

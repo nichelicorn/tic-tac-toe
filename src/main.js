@@ -15,6 +15,18 @@ boardBckgrnd.addEventListener("click", markTheBoard);
 bttnStartGame.addEventListener("click", startGamePlay);
 
 // GAME FUNCTIONS 🎴
+
+// var timeoutID;
+//
+// function delayedAlert() { // THIS FUNCTION RUNS WHEN THE BUTTON "SHOW ALERT BOX" IS CLICKED
+  //   timeoutID = window.setTimeout(window.alert, 2*1000, 'That was really slow!'); // timeoutID IS REASSIGNED WITHIN THE DELAYED ALERT FUNCTION; THIS TELLS THE BROWSER WHEN TO RUN THE FUNCTION delayedAlert
+  // }
+  //
+  // function clearAlert() {
+    //   window.clearTimeout(timeoutID);
+    // }
+
+
 function startGamePlay() {
   game.startGame();
   bttnStartGame.classList.add("hidden");
@@ -40,13 +52,16 @@ function announceGameEnd() {
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
     boardBckgrnd.classList.add("no-click");
     displayWins();
+    setTimeout(timeoutNextGame, 1000);
     // resetGameBoard();
   } else if (game.playCount >= 9 && !game.hasWinner) {
     console.log("nobody won");
     playerLine.innerText = "This game is a draw. Nobody won!";
     boardBckgrnd.classList.add("no-click");
     displayWins();
+    setTimeout(timeoutNextGame, 1000);
     // resetGameBoard();
+
   }
 }
 
@@ -57,8 +72,12 @@ function displayWins() {
   oWins.innerText = `${oWinCount}!`;
 }
 
-function resetGameBoard() {
+function timeoutNextGame() {
   game.resetBoard(); // gameBoard data is reset; player wins have persisted
+  resetGameBoard();
+}
+
+function resetGameBoard() {
   a1.innerText = "";
   b1.innerText = "";
   c1.innerText = "";
@@ -72,6 +91,8 @@ function resetGameBoard() {
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
 }
+
+
 
 
 // 🏁 WHAT IS NEXT?
