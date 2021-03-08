@@ -15,6 +15,7 @@ class Game {
       {win: ["a3", "b2", "c1"], isWinner: false}
     ];
     this.hasWinner = false;
+    this.playCount = 0;
   }
 
   startGame() { // add a button to start the game?
@@ -31,14 +32,15 @@ class Game {
   takeTurns() {
     if (this.currentPlayer === this.player1) {
       this.currentPlayer = this.player2;
-      // console.log("the current player is:", this.currentPlayer);
+      console.log("It's player 2's turn: O");
     } else if (this.currentPlayer === this.player2) {
       this.currentPlayer = this.player1;
-      // console.log("the current player is:", this.currentPlayer);
+      console.log("It's player 1's turn: X");
     }
   }
 
   placeToken(clickedBox) {
+    this.playCount++;
     var clickedID = clickedBox.id;
     console.log("clickedID:", clickedID);
     for (var i = 0; i < this.gameBoard.length; i++) {
@@ -71,10 +73,13 @@ class Game {
           // console.log("this.winningCombos[i] isWinner?", this.winningCombos[i].isWinner);
           this.winningCombos[i].isWinner = true;
           this.hasWinner = true;
-          console.log("someone won!");
-          console.log("this.currentPlayer:", this.currentPlayer);
+          // console.log("someone won!");
           if (this.winningCombos[i].isWinner) {
+            // console.log("this.currentPlayer:", this.currentPlayer);
+            console.log(`${this.currentPlayer.token} is the winner!`);
             console.log("the winning game:", this.winningCombos[i]);
+          } else if (this.winningCombos[i].isWinner && this.playCount >= 9){
+            console.log("Nobody has won this game!");
           }
         }
       }
@@ -92,8 +97,6 @@ class Game {
     this.placeToken(boxB2);
     this.takeTurns();
     this.placeToken(boxA3);
-    this.takeTurns();
-    // this.updateWinCondition();
   }
 
 }

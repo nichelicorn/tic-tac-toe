@@ -6,6 +6,7 @@ class Player {
   }
 
   saveWinsToStorage() {
+    this.wins++;
     // this method will save Player object to localStorage
   }
 
