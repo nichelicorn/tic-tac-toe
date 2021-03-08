@@ -4,8 +4,10 @@ var game = new Game();
 // QUERY SELECTORS 🕵️‍♀️
 var boardBckgrnd = document.getElementById("boardBckgrnd");
 var bttnStartGame = document.getElementById("bttnStartGame");
+var oWins = document.getElementById("oWins");
 var playerLine = document.getElementById("playerLine");
 var turnLine = document.getElementById("turnLine");
+var xWins = document.getElementById("xWins");
 
 // EVENT LISTENERS 🎧
 boardBckgrnd.addEventListener("click", markTheBoard);
@@ -42,3 +44,11 @@ function announceGameEnd() {
     boardBckgrnd.classList.add("no-click");
   }
 }
+
+// 🏁 WHAT IS NEXT?
+// - [ ] display player data in the sidebars
+  // - [ ] target the player wins in both sidebars
+  // - [ ] update innerText to display the number of wins for both players
+  // - [ ] when should this be called?
+
+// - [ ] adjust CSS sizing - too big when in full screen mode
