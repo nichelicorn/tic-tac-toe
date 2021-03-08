@@ -38,9 +38,9 @@ bttnStartGame.addEventListener("click", startGamePlay);
       // - √ it seems best to target the whole board, since that is NOT re-created in the startGamePlay function
     // - √ when a box is clicked, that box becomes the clickedBox passed into placeToken (hopefully 🤞) √ I think I will need to create a variable for this that can be passed as a parameter into placeToken(clickedBox)
   // - √ game.placeToken()
-  // - display currentPlayer.token
-  // - game.takeTurns();
-  // - playerLine.innerText should be updated with new currentPlayer
+  // - √ display currentPlayer.token
+  // - √ game.takeTurns();
+  // - √ playerLine.innerText should be updated with new currentPlayer
 
 function startGamePlay() {
   game.startGame();
@@ -51,10 +51,7 @@ function startGamePlay() {
 }
 
 function markTheBoard() {
-  // console.log("event target:", event.target);
-  // console.log("event target closest box:", event.target.closest(".box"));
   var clickedBox = event.target.closest(".box");
-  // console.log("clickedBox:", clickedBox);
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token;
   announceGameEnd();
