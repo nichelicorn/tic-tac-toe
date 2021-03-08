@@ -74,16 +74,23 @@ class Game {
           this.winningCombos[i].isWinner = true;
           this.hasWinner = true;
           // console.log("someone won!");
-          if (this.winningCombos[i].isWinner) {
-            this.currentPlayer.saveWinsToStorage();
-            // console.log("this.currentPlayer:", this.currentPlayer);
-            console.log(`${this.currentPlayer.token} is the winner!`);
-            // console.log("the winning game:", this.winningCombos[i]);
-          } else if (this.winningCombos[i].isWinner && this.playCount >= 9){
-            console.log("Nobody has won this game!");
           }
+        if (this.winningCombos[i].isWinner) {
+          this.currentPlayer.saveWinsToStorage();
+          // console.log("this.currentPlayer:", this.currentPlayer);
+          console.log(`${this.currentPlayer.token} is the winner!`);
+          // console.log("the winning game:", this.winningCombos[i]);
+        // } else if (this.playCount === 9) {
+        //   console.log("We've played all the squares and nobody won!");
+          // }
         }
       }
+      if (this.playCount === 9 && !this.winningCombos[i].isWinner){
+        console.log("Nobody has won this game!");
+        // } else if (!this.winningCombos[i].isWinner) { // this condition doesn't work
+          // console.log("No winners");
+          }
+      // console.log("this.playCount?", this.playCount);
     }
   }
 
@@ -100,6 +107,27 @@ class Game {
     this.placeToken(boxA3);
   }
 
+  playDrawGame() {
+    game.startGame();
+    game.placeToken(boxC2);
+    game.takeTurns();
+    game.placeToken(boxB2);
+    game.takeTurns();
+    game.placeToken(boxC3);
+    game.takeTurns();
+    game.placeToken(boxA1);
+    game.takeTurns();
+    game.placeToken(boxA3);
+    game.takeTurns();
+    game.placeToken(boxB3);
+    game.takeTurns();
+    game.placeToken(boxA2);
+    game.takeTurns();
+    game.placeToken(boxC1);
+    game.takeTurns();
+    game.placeToken(boxB1);
+  }
+
 }
 
 
@@ -107,8 +135,6 @@ class Game {
 
 // - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
   // if none of the arrays above are possible, the game is a draw and no one wins
-
-
 
 
 // 🗺 CURRENT PROGRESS
@@ -133,10 +159,7 @@ class Game {
 
 
 // ⚔️☮️ Tic Tac Toe - How to play
-
 // within the Game class, do these things:
-
-
 // - 7) The box cannot be marked again once a marker has been placed there
 // - 8) DOM ! METHOD game.placeToken() IN COMBINATION WITH game.takeTurns() WILL UPDATE THE DATA MODEL FOR THIS PIECE ! There will be a slight delay, then the next player is alerted to take their turn
 // after the click splices the gameBoard, the currentPlayer should be switched to the other player
