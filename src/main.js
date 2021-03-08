@@ -31,7 +31,9 @@ bttnStartGame.addEventListener("click", startGamePlay);
 // - √ create a notification that will alert the generated player to take a turn!
 // - NEXT when a box is clicked:
     // - need an event listener for the boxes
-    // - when a box is clicked, that box becomes the clickedBox passed into placeToken (hopefully 🤞)
+      // - do I want to target each individual box, or the gameboard background as a whole?
+      // - it seems best to target the whole board, since that is NOT re-created in the startGamePlay function
+    // - when a box is clicked, that box becomes the clickedBox passed into placeToken (hopefully 🤞) I think I will need to create a variable for this that can be passed as a parameter into placeToken(clickedBox)
   // - game.placeToken()
   // - display currentPlayer.token
   // - game.takeTurns();
