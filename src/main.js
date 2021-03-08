@@ -45,10 +45,21 @@ function announceGameEnd() {
   }
 }
 
+function displayWins() {
+  // console.log("player1 X wins:", game.player1.wins);
+  var xWinCount = game.player1.wins;
+  console.log("xWinCount:", xWinCount);
+  // console.log("player2 O wins:", game.player2.wins);
+  var oWinCount = game.player2.wins;
+  console.log("oWinCount:", oWinCount);
+}
+
 // 🏁 WHAT IS NEXT?
 // - [ ] display player data in the sidebars
-  // - [ ] target the player wins in both sidebars
+  // - √ target the player wins in both sidebars
   // - [ ] update innerText to display the number of wins for both players
   // - [ ] when should this be called?
+
+// - [ ] add timeout to start new game
 
 // - [ ] adjust CSS sizing - too big when in full screen mode
