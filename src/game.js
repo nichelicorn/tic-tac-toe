@@ -4,8 +4,6 @@ class Game {
     this.player2 = new Player(0, "O");
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
     this.currentPlayer = undefined;
-    // this.currentGameBoard = [];
-    // this.currentGameBoard = ["a1", "b1", "c1", "a2", "b2", "c2", "a3", "b3", "c3"],
     this.winningCombos = [
       {win: ["a1", "b1", "c1"], isWinner: false},
       {win: ["a2", "b2", "c2"], isWinner: false},
