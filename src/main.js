@@ -42,17 +42,14 @@ function announceGameEnd() {
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
     boardBckgrnd.classList.add("no-click");
     displayWins();
-    setTimeout(timeoutNextGame, 7000); // timeout is working!! need to add a message that game will reset and extend time period
-    // resetGameBoard();
+    setTimeout(timeoutNextGame, 7000);
   } else if (game.playCount >= 9 && !game.hasWinner) {
     // console.log("nobody won");
     turnLine.classList.add("hidden");
     playerLine.innerText = "This game is a draw. Nobody won!";
     boardBckgrnd.classList.add("no-click");
     displayWins();
-    setTimeout(timeoutNextGame, 7000); // timeout is working!! need to add a message that game will reset and extend time period
-    // resetGameBoard();
-
+    setTimeout(timeoutNextGame, 7000);
   }
 }
 
@@ -64,7 +61,7 @@ function displayWins() {
 }
 
 function timeoutNextGame() {
-  game.resetBoard(); // gameBoard data is reset; player wins have persisted
+  game.resetBoard();
   resetGameBoard();
 }
 
