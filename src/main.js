@@ -57,6 +57,7 @@ function markTheBoard() {
   // console.log("clickedBox:", clickedBox);
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token; // displays token!! need to style the boxes though
+  game.takeTurns();
 }
 
 // 🤷‍♀️VARIABLES I MIGHT WANT TO USE LATER
