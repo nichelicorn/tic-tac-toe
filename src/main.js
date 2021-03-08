@@ -36,8 +36,8 @@ bttnStartGame.addEventListener("click", startGamePlay);
     // - need an event listener for the boxes
       // - √ TARGETED boardBckgrnd - do I want to target each individual box, or the gameboard background as a whole?
       // - √ it seems best to target the whole board, since that is NOT re-created in the startGamePlay function
-    // - when a box is clicked, that box becomes the clickedBox passed into placeToken (hopefully 🤞) I think I will need to create a variable for this that can be passed as a parameter into placeToken(clickedBox)
-  // - game.placeToken()
+    // - √ when a box is clicked, that box becomes the clickedBox passed into placeToken (hopefully 🤞) √ I think I will need to create a variable for this that can be passed as a parameter into placeToken(clickedBox)
+  // - √ game.placeToken()
   // - display currentPlayer.token
   // - game.takeTurns();
   // - playerLine.innerText should be updated with new currentPlayer
@@ -56,6 +56,7 @@ function markTheBoard() {
   var clickedBox = event.target.closest(".box");
   // console.log("clickedBox:", clickedBox);
   game.placeToken(clickedBox);
+  clickedBox.innerText = game.currentPlayer.token; // displays token!! need to style the boxes though
 }
 
 // 🤷‍♀️VARIABLES I MIGHT WANT TO USE LATER
