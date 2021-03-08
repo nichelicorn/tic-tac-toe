@@ -10,23 +10,13 @@ var turnLine = document.getElementById("turnLine");
 var xWins = document.getElementById("xWins");
 var gameBox = document.getElementById("gameBox")
 
+var resetMsg = document.getElementById("resetMsg");
+
 // EVENT LISTENERS 🎧
 boardBckgrnd.addEventListener("click", markTheBoard);
 bttnStartGame.addEventListener("click", startGamePlay);
 
 // GAME FUNCTIONS 🎴
-
-// var timeoutID;
-//
-// function delayedAlert() { // THIS FUNCTION RUNS WHEN THE BUTTON "SHOW ALERT BOX" IS CLICKED
-  //   timeoutID = window.setTimeout(window.alert, 2*1000, 'That was really slow!'); // timeoutID IS REASSIGNED WITHIN THE DELAYED ALERT FUNCTION; THIS TELLS THE BROWSER WHEN TO RUN THE FUNCTION delayedAlert
-  // }
-  //
-  // function clearAlert() {
-    //   window.clearTimeout(timeoutID);
-    // }
-
-
 function startGamePlay() {
   game.startGame();
   bttnStartGame.classList.add("hidden");
@@ -52,14 +42,15 @@ function announceGameEnd() {
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
     boardBckgrnd.classList.add("no-click");
     displayWins();
-    setTimeout(timeoutNextGame, 1000);
+    setTimeout(timeoutNextGame, 7000); // timeout is working!! need to add a message that game will reset and extend time period
     // resetGameBoard();
   } else if (game.playCount >= 9 && !game.hasWinner) {
-    console.log("nobody won");
+    // console.log("nobody won");
+    turnLine.classList.add("hidden");
     playerLine.innerText = "This game is a draw. Nobody won!";
     boardBckgrnd.classList.add("no-click");
     displayWins();
-    setTimeout(timeoutNextGame, 1000);
+    setTimeout(timeoutNextGame, 7000); // timeout is working!! need to add a message that game will reset and extend time period
     // resetGameBoard();
 
   }
@@ -96,9 +87,6 @@ function resetGameBoard() {
 
 
 // 🏁 WHAT IS NEXT?
-// - [ ] Automatically reset the game board to allow for a new game to be played after the previous game is won
-// √ Game class data will be reassigned
-// - [ ] add timeout to start new game
 
 
 
@@ -108,5 +96,8 @@ function resetGameBoard() {
 // - [ ] when should this be called?
 // - [ ] eventually, on page load
 // - √ for now, when the win happens, in announceGameEnd
+// - √ Automatically reset the game board to allow for a new game to be played after the previous game is won
+// √ Game class data will be reassigned
+// - √ add timeout to start new game
 
 // - [ ] adjust CSS sizing - too big when in full screen mode
