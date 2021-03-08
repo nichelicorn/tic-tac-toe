@@ -58,9 +58,7 @@ function displayWins() {
 }
 
 function resetGameBoard() {
-  // reset game board once the game has ended
   game.resetBoard(); // gameBoard data is reset; player wins have persisted
-  // √ reset visuals on gameBoard
   a1.innerText = "";
   b1.innerText = "";
   c1.innerText = "";
@@ -70,7 +68,7 @@ function resetGameBoard() {
   a3.innerText = "";
   b3.innerText = "";
   c3.innerText = "";
-  playerLine.classList.add("hidden"); // √
+  playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
 }
