@@ -39,5 +39,6 @@ function announceGameEnd() {
   } else if (game.playCount >= 9 && !game.hasWinner) {
     console.log("nobody won");
     playerLine.innerText = "This game is a draw. Nobody won!";
+    boardBckgrnd.classList.add("no-click");
   }
 }
