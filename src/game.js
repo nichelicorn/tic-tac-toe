@@ -76,9 +76,9 @@ class Game {
           // console.log("someone won!");
           if (this.winningCombos[i].isWinner) {
             this.currentPlayer.saveWinsToStorage();
-            console.log("this.currentPlayer:", this.currentPlayer);
+            // console.log("this.currentPlayer:", this.currentPlayer);
             console.log(`${this.currentPlayer.token} is the winner!`);
-            console.log("the winning game:", this.winningCombos[i]);
+            // console.log("the winning game:", this.winningCombos[i]);
           } else if (this.winningCombos[i].isWinner && this.playCount >= 9){
             console.log("Nobody has won this game!");
           }
@@ -108,20 +108,6 @@ class Game {
 // - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
   // if none of the arrays above are possible, the game is a draw and no one wins
 
-// - 17) Board now has 5 tokens placed, and there is a possiblity for a win!
-  // a win is only possible once there are 5 tokens placed on the gameBoard
-  // a win is only possible once the currentGameBoard has 5+ tokens
-
-// - 18) Evaluate location of first players tokens
-  // check currentGameBoard against gameBoard
-  // map the currentGameBoard's tokens onto the currentGameBoard
-
-// - 19) If a row of 3 has been created, alert that first player has won!
-  // if one of the possible wins is detected, alert that the player whose tokens match the possible win has won!
-  // seems like this should only need to evaluate the currentPlayer
-
-// - 20) Then add a win to first player's win count
-// add one to currentPlayer's count 
 
 
 
@@ -140,6 +126,10 @@ class Game {
 // 4) can switch to next player
   // 4a) game.takeTurns();
   //     updates currentPlayer to be the opposite player
+// 5) can check for win conditions
+  // 5a) if there is a win condition with 3 of the same token
+  // 5b) the win condition flips to true and logs the winning player!
+  // 5c) WORKING ON DRAW SCENARIO
 
 
 // ⚔️☮️ Tic Tac Toe - How to play
@@ -222,3 +212,14 @@ class Game {
 // √ A way to check the Game’s board data for win conditions
 // - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
 // √ create an array that holds all possible wins (this is an array of arrays; each data point will contain three box id's)
+// - √ 17) Board now has 5 tokens placed, and there is a possiblity for a win!
+// a win is only possible once there are 5 tokens placed on the gameBoard
+// a win is only possible once the currentGameBoard has 5+ tokens
+// - √ 18) Evaluate location of first players tokens
+// check currentGameBoard against gameBoard
+// map the currentGameBoard's tokens onto the currentGameBoard
+// - √ 19) If a row of 3 has been created, alert that first player has won!
+// if one of the possible wins is detected, alert that the player whose tokens match the possible win has won!
+// seems like this should only need to evaluate the currentPlayer
+// - √ 20) Then add a win to first player's win count
+// add one to currentPlayer's count 
