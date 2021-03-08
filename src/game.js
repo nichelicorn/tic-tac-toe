@@ -51,21 +51,26 @@ class Game {
         var marker = theWinArray.indexOf(clickedID);
         // console.log("marker:", marker);
         theWinArray.splice(marker, 1, this.currentPlayer.token);
-        this.checkForWinningCombos(theWinArray); // might not need this - look for the property within the object and update that - the checkForWinningCombos method is adding a new property to the array of tokens, not updating the existing object property
+        this.checkForWinningCombos(theWinArray);
       }
     }
   }
 
   checkForWinningCombos(theWinArray) {
     // console.log("theWinCombos.isWinner:", theWinCombos.isWinner);
-    // var updateWinCondition = theWinCombos.isWinner;
     // console.log("updateWinCondition:", updateWinCondition);
     for (var i = 0; i < this.winningCombos.length; i++) { // this is going to look at each object within the winningCombos array
       if (theWinArray[0] === theWinArray[1] && theWinArray[1] === theWinArray[2]) { // if it finds that the 0 index strictly equals the 1 index, AND the 1 index strictly equals the 2 index,
         console.log("one of these is true!");
-        console.log("updateWinCondition:", updateWinCondition);
-        updateWinCondition = true;
-        console.log("did the update work?", updateWinCondition);
+        console.log("theWinArray:", theWinArray);
+        if (theWinArray === this.winningCombos[i].win) {
+          // console.log("this.winningCombos[i]:", this.winningCombos[i]);
+          console.log("this.winningCombos[i] isWinner?", this.winningCombos[i].isWinner);
+          this.winningCombos[i].isWinner = true; // 👼💩!!! this updated the correct winning combo!! // updated all of them to true 😒
+
+        }
+        // var updateWinCondition = this.winningCombos[i].isWinner;
+        // console.log("updateWinCondition:", updateWinCondition);
         // find which condition has three of the same values and return that value - should this be assigned as a variable?
       } else {
         console.log("no wins yet!");
