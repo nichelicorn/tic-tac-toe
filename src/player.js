@@ -7,6 +7,10 @@ class Player {
 
   saveWinsToStorage() {
     this.wins++;
+    // console.log("player1?", game.player1);
+    // console.log("player2?", game.player2);
+
+    // var winsToStore = game.Player;
     // this method will save Player object to localStorage
   }
 
