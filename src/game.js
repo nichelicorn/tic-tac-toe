@@ -75,7 +75,8 @@ class Game {
           this.hasWinner = true;
           // console.log("someone won!");
           if (this.winningCombos[i].isWinner) {
-            // console.log("this.currentPlayer:", this.currentPlayer);
+            this.currentPlayer.saveWinsToStorage();
+            console.log("this.currentPlayer:", this.currentPlayer);
             console.log(`${this.currentPlayer.token} is the winner!`);
             console.log("the winning game:", this.winningCombos[i]);
           } else if (this.winningCombos[i].isWinner && this.playCount >= 9){
