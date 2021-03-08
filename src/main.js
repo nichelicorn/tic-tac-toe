@@ -38,10 +38,12 @@ function announceGameEnd() {
     turnLine.classList.add("hidden");
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
     boardBckgrnd.classList.add("no-click");
+    displayWins();
   } else if (game.playCount >= 9 && !game.hasWinner) {
     console.log("nobody won");
     playerLine.innerText = "This game is a draw. Nobody won!";
     boardBckgrnd.classList.add("no-click");
+    displayWins();
   }
 }
 
@@ -57,10 +59,12 @@ function displayWins() {
 }
 
 // 🏁 WHAT IS NEXT?
-// - [ ] display player data in the sidebars
+// - √ display player data in the sidebars
   // - √ target the player wins in both sidebars
-  // - [ ] update innerText to display the number of wins for both players
+  // - √ update innerText to display the number of wins for both players
   // - [ ] when should this be called?
+    // - [ ] eventually, on page load
+    // - [ ] for now, when the win happens, in announceGameEnd
 
 // - [ ] add timeout to start new game
 
