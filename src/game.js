@@ -60,13 +60,15 @@ class Game {
     // console.log("theWinCombos.isWinner:", theWinCombos.isWinner);
     // var updateWinCondition = theWinCombos.isWinner;
     // console.log("updateWinCondition:", updateWinCondition);
-    for (var i = 0; i < this.winningCombos.length; i++) {
-      if (theWinArray[0] === theWinArray[1] && theWinArray[1] === theWinArray[2]) {
+    for (var i = 0; i < this.winningCombos.length; i++) { // this is going to look at each object within the winningCombos array
+      if (theWinArray[0] === theWinArray[1] && theWinArray[1] === theWinArray[2]) { // if it finds that the 0 index strictly equals the 1 index, AND the 1 index strictly equals the 2 index,
         console.log("one of these is true!");
         console.log("updateWinCondition:", updateWinCondition);
         updateWinCondition = true;
         console.log("did the update work?", updateWinCondition);
         // find which condition has three of the same values and return that value - should this be assigned as a variable?
+      } else {
+        console.log("no wins yet!");
       }
     }
   }
