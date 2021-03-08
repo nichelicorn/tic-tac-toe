@@ -111,39 +111,39 @@ class Game {
     this.playCount = 0;
   }
 
-  playFiveRounds() {
-    this.startGame();
-    this.placeToken(boxA1);
-    this.takeTurns();
-    this.placeToken(boxB1);
-    this.takeTurns();
-    this.placeToken(boxA2);
-    this.takeTurns();
-    this.placeToken(boxB2);
-    this.takeTurns();
-    this.placeToken(boxA3);
-  }
+  // playFiveRounds() {
+  //   this.startGame();
+  //   this.placeToken(boxA1);
+  //   this.takeTurns();
+  //   this.placeToken(boxB1);
+  //   this.takeTurns();
+  //   this.placeToken(boxA2);
+  //   this.takeTurns();
+  //   this.placeToken(boxB2);
+  //   this.takeTurns();
+  //   this.placeToken(boxA3);
+  // }
 
-  playDrawGame() {
-    game.startGame();
-    game.placeToken(boxC2);
-    game.takeTurns();
-    game.placeToken(boxB2);
-    game.takeTurns();
-    game.placeToken(boxC3);
-    game.takeTurns();
-    game.placeToken(boxA1);
-    game.takeTurns();
-    game.placeToken(boxA3);
-    game.takeTurns();
-    game.placeToken(boxB3);
-    game.takeTurns();
-    game.placeToken(boxA2);
-    game.takeTurns();
-    game.placeToken(boxC1);
-    game.takeTurns();
-    game.placeToken(boxB1);
-  }
+  // playDrawGame() {
+  //   game.startGame();
+  //   game.placeToken(boxC2);
+  //   game.takeTurns();
+  //   game.placeToken(boxB2);
+  //   game.takeTurns();
+  //   game.placeToken(boxC3);
+  //   game.takeTurns();
+  //   game.placeToken(boxA1);
+  //   game.takeTurns();
+  //   game.placeToken(boxA3);
+  //   game.takeTurns();
+  //   game.placeToken(boxB3);
+  //   game.takeTurns();
+  //   game.placeToken(boxA2);
+  //   game.takeTurns();
+  //   game.placeToken(boxC1);
+  //   game.takeTurns();
+  //   game.placeToken(boxB1);
+  // }
 
 }
 

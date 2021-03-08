@@ -65,6 +65,8 @@ function announceGameEnd() {
   if (game.playCount >= 5 && game.hasWinner) {
     turnLine.classList.add("hidden");
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
+    // need to disable further clicks on the board
+    boardBckgrnd.classList.add(".no-click");
   } else if (game.playCount >= 9 && !game.hasWinner) {
     console.log("nobody won");
     playerLine.innerText = "This game is a draw. Nobody won!";

@@ -16,6 +16,10 @@ body {
   display: none;
 }
 
+.no-click {
+  pointer-events: none;
+}
+
 h1 {
   color: mintcream;
   /* margin: .5em; */
