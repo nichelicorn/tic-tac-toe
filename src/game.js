@@ -3,6 +3,7 @@ class Game {
     this.player1 = new Player(1, "X");
     this.player2 = new Player(0, "O");
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
+    // this.gameBoard = ["a1", "b1", "c1", "a2", "b2", "c2", "a3", "b3", "c3"];
     this.currentPlayer = undefined;
     this.winningCombos = [
       {win: ["a1", "b1", "c1"], isWinner: false},
@@ -40,11 +41,14 @@ class Game {
   }
 
   placeToken(clickedBox) {
+    // console.log("clickedBox:", clickedBox);
     this.playCount++;
     var clickedID = clickedBox.id;
-    console.log("clickedID:", clickedID);
+    // console.log("clickedID:", clickedID);
     for (var i = 0; i < this.gameBoard.length; i++) {
+      // console.log("gameBoard[i]:", this.gameBoard[i]);
       var gameBoardID = this.gameBoard[i].id;
+      // console.log("gameBoardID:", gameBoardID); //gameBoardID is now undefined
       if (clickedID === gameBoardID) {
         this.gameBoard.splice(i, 1, this.currentPlayer.token);
         this.spliceWin(clickedID)
@@ -53,9 +57,12 @@ class Game {
   }
 
   spliceWin(clickedID) {
+    // console.log("is spliceWin working now?");
     for (var i = 0; i < this.winningCombos.length; i++) {
       var theWinCombos = this.winningCombos[i];
+      // console.log("theWinCombos:", theWinCombos);
       var theWinArray = this.winningCombos[i].win;
+      // console.log("theWinArray:", theWinArray);
       if (theWinArray.includes(clickedID)) {
         var marker = theWinArray.indexOf(clickedID);
         theWinArray.splice(marker, 1, this.currentPlayer.token);
@@ -83,6 +90,7 @@ class Game {
 
   resetBoard() {
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
+    // this.gameBoard = ["a1", "b1", "c1", "a2", "b2", "c2", "a3", "b3", "c3"];
     this.currentPlayer = undefined;
     this.winningCombos = [
       {win: ["a1", "b1", "c1"], isWinner: false},
