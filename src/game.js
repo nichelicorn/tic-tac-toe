@@ -4,8 +4,6 @@ class Game {
     this.player2 = new Player(0, "O");
     this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
     this.currentPlayer = undefined;
-    // this.currentGameBoard = [];
-    // this.currentGameBoard = ["a1", "b1", "c1", "a2", "b2", "c2", "a3", "b3", "c3"],
     this.winningCombos = [
       {win: ["a1", "b1", "c1"], isWinner: false},
       {win: ["a2", "b2", "c2"], isWinner: false},
@@ -16,6 +14,7 @@ class Game {
       {win: ["a1", "b2", "c3"], isWinner: false},
       {win: ["a3", "b2", "c1"], isWinner: false}
     ];
+    this.hasWinner = false;
   }
 
   startGame() { // add a button to start the game?
@@ -45,11 +44,8 @@ class Game {
     for (var i = 0; i < this.winningCombos.length; i++) {
       var theWinCombos = this.winningCombos[i];
       var theWinArray = this.winningCombos[i].win;
-      // console.log("theWinArray:", theWinArray);
       if (theWinArray.includes(clickedID)) {
-        // console.log("hey clicked id!");
         var marker = theWinArray.indexOf(clickedID);
-        // console.log("marker:", marker);
         theWinArray.splice(marker, 1, this.currentPlayer.token);
         this.checkForWinningCombos(theWinArray);
       }
@@ -57,38 +53,31 @@ class Game {
   }
 
   checkForWinningCombos(theWinArray) {
-    // console.log("theWinCombos.isWinner:", theWinCombos.isWinner);
-    // console.log("updateWinCondition:", updateWinCondition);
-    for (var i = 0; i < this.winningCombos.length; i++) { // this is going to look at each object within the winningCombos array
-      if (theWinArray[0] === theWinArray[1] && theWinArray[1] === theWinArray[2]) { // if it finds that the 0 index strictly equals the 1 index, AND the 1 index strictly equals the 2 index,
-        console.log("one of these is true!");
-        console.log("theWinArray:", theWinArray);
+    for (var i = 0; i < this.winningCombos.length; i++) {
+      if (theWinArray[0] === theWinArray[1] && theWinArray[1] === theWinArray[2]) {
+        // console.log("one of these is true!");
+        // console.log("theWinArray:", theWinArray);
         if (theWinArray === this.winningCombos[i].win) {
-          // console.log("this.winningCombos[i]:", this.winningCombos[i]);
-          console.log("this.winningCombos[i] isWinner?", this.winningCombos[i].isWinner);
-          this.winningCombos[i].isWinner = true; // 👼💩!!! this updated the correct winning combo!! // updated all of them to true 😒
-
+          // console.log("this.winningCombos[i] isWinner?", this.winningCombos[i].isWinner);
+          this.winningCombos[i].isWinner = true;
+          this.hasWinner = true;
+          console.log("someone won!");
+          console.log("this.currentPlayer:", this.currentPlayer);
         }
-        // var updateWinCondition = this.winningCombos[i].isWinner;
-        // console.log("updateWinCondition:", updateWinCondition);
-        // find which condition has three of the same values and return that value - should this be assigned as a variable?
-      } else {
-        console.log("no wins yet!");
       }
     }
   }
-  //   // console.log("theWinArray[0]:", theWinArray["0"]);
-  //     console.log("the win array:", theWinArray);
-  //   // if this.winningCombos contains an array of three of the same tokens, return a winner
 
   takeTurns() {
     if (this.currentPlayer === this.player1) {
       this.currentPlayer = this.player2;
+      // console.log("the current player is:", this.currentPlayer);
     } else if (this.currentPlayer === this.player2) {
       this.currentPlayer = this.player1;
+      // console.log("the current player is:", this.currentPlayer);
     }
-    console.log("the current player is:", this.currentPlayer);
   }
+
 
   playFiveRounds() {
     this.startGame();
@@ -102,16 +91,13 @@ class Game {
     this.takeTurns();
     this.placeToken(boxA3);
     this.takeTurns();
-    this.checkForWinningCombos();
+    // this.checkForWinningCombos();
   }
 
 }
 
 
 // 🏁 WHAT IS NEXT?
-// A way to check the Game’s board data for win conditions
-// - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
-  // √ create an array that holds all possible wins (this is an array of arrays; each data point will contain three box id's)
 
 // - 4) A draw is also possible, and results when neither player is able to make a row of three tokens
   // if none of the arrays above are possible, the game is a draw and no one wins
@@ -227,119 +213,6 @@ class Game {
 // √ that box should be marked with the currentPlayer's token
 // √ replace the box id with the token?
 // √ switch turns
-
-
-// PREVIOUS VERSIONS OF THIS.winningCombos
-// this.winningCombos = [
-  //   ["a1", "b1", "c1"], ["a2", "b2", "c2"], ["a3", "b3", "c3"], ["a1", "a2", "a3"], ["b1", "b2", "b3"], ["c1", "c2", "c3"], ["a1", "b2", "c3"], ["a3", "b2", "c1"]
-  // ];
-  // this.winningCombos = [
-    //   [a1, b1, c1], [a2, b2, c2], [a3, b3, c3],
-    //   [a1, a2, a3], [b1, b2, b3], [c1, c2, c3],
-    //   [a1, b2, c3], [a3, b2, c1]
-    // ]; // items in winningCombos are returns as arrays of elements
-    // currentGameBoard is returned as an array of strings
-    // change winningCombos to strings??
-
-
-
-    // PREVIOUS CODE IN checkForWinningCombos
-    // if (this.winningCombos.includes(this.currentGameBoard)) { this is false
-      // if ()
-      //   console.log("the if on 52 is true!");
-      // } else {
-        //   console.log("that if on 52 is false");
-        // }
-        // if (any of the winningCombos are present in the currentGameBoard) {
-
-          // find out which player's tokens match the winningCombos value;
-          // add one to playerN's win count
-          // return playerN is the winner!
-          // }
-
-
-
-// FIRST ITERATION OF checkForWinningCombos
-          // checkForWinningCombos() {
-            //     for (var i = 0; i < this.currentGameBoard.length; i++) {
-              //       var piece = this.currentGameBoard[i];
-              //       console.log("piece i:", piece); // logs each
-              //       for (var w = 0; w < this.winningCombos.length; w++) { // IF THIS LOOP COMES, FIRST IT DOESN'T READ ANYTHING
-                //         console.log("winningCombos[i]:", this.winningCombos[i]); // returns the entire winningCombos array, an array of objects // returns undefined ... huh ... what if this was inside the currentGameBoard for loop?
-                //       }
-                //     }
-                //   }
-                // console.log("winningCombos[i].row:", this.winningCombos[i].row); // returns the list of row arrays from the winningCombos objects; the log is reading piece a1SWORD and the next 8 rows are all the same winningCombo[i] array; continues on through all the currentGameBoard pieces
-                // ONLY COMPARING THE FIRST PIECE TO THE FIRST ARRAY, THE SECOND PIECE TO THE SECOND ARRAY, ETC...
-
-                // if (piece.length >= 3 { // maybe I shouldn't get ahead of myself... what is being returned for the winningCombos[i]?
-                  //   replace winningCombos[i]
-                  // })
-
-                  // if (piece.includes(this.currentPlayer.token)) { // this if statement isn't returning what I'm looking for - if the piece (this.currentGameBoard[i]) includes the current player token
-                    //   console.log("the piece does include");
-                    // first loop looks at this.winningCombo.length √
-                    // for each [i], do =>
-                    // second loop - looks @ this.currentGameBoard √
-                    // for each [i], do =>
-                    // look @ this.winningCombos[i], do =>
-                    // if this.currentGameBoard[i].id is found in this.winningCombos[i]
-                    // reassign this.winningCombos[i].row to be an array of the tokens found in this.currentGameBoard
-
-                    // if the token in currentGameBoard is found in winningCombos, switch out that value with the current player's tokens
-                    // i think this might need to happen earlier
-
-                    // on click, assign the current player's token to a placeholder value
-                    // the placeholder value could then reassign the values contained within the winningCombos with the current player's token
-
-                    // first attempt at this method - it's not currently working as desired
-                    // try again, and this time look into the arrays in the opposite order
-                    //switch the count in the winningCombos objects to a boolean
-                    // then, if all three boxes have matching token values (contained within this.currentGameBoard), the player whose token matches the winningCombo is the winner!
-
-                    // for (var i = 0; i < this.currentGameBoard.length; i++) {
-                      //   console.log("currentGameBoard value i:", this.currentGameBoard[i]); // logs the box id
-                      //   // var piece = this.currentGameBoard[i];
-                      //   // if (piece.includes(this.currentPlayer.token)) { // this if statement isn't returning what I'm looking for - if the piece (this.currentGameBoard[i]) includes the current player token
-                        //   //   console.log("the piece does include");
-                        //     for (var w = 0; w < this.winningCombos.length; w++) { // none of these counts udpated with the if statement above
-                          // console.log("in the win loop"); // gets into the loop, then nothing else is happening here, so, it skips down to line 56
-                          //       console.log("in the win loop");
-                          //       if (this.winningCombos[w].row.includes(this.currentGameBoard[i])) {
-                            //         this.winningCombos[w].count++; // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
-                            //       // }
-                            //     }
-                            //   }
-                            //   // if the i in currentGameBoard is found in any of the arrays in winningCombos,
-                            // }
-                            // what am I trying to do now??
-                            // if all the tokens are the same, add 3 to the winningCombos.count?
-                            // if all the tokens in the winningCombos[i] are the same, return that as the winningCombo!
-                            // alert which player's token has won
-                            // if the winningCombos.includes three of the same token, that player has won!!
-
-
-                            // - the winningCombos are being incremented if the space is occupied
-                            // - the token occupying the space is not being identified
-                            // - next step is to identify if the winningCombos are only occupied by the same kind of token
-
-
-
-
-                            // if
-                            // if (this.winningCombos[w].count >= 3) { // this only identifies if the array has a count of three - this doesn't identify which pieces occupy the spaces
-                              //   // console.log("this.currentPlayer:", this.currentPlayer);
-                              //   console.log(`${this.currentPlayer.token} is the winner!`);
-                              // }
-                              // tag that currentGameBoard[i] as a possibleWin
-                              // if the currentGameBoard[i] has 3 tags, that array is a winner!
-                              // add a count = 0 to the winning combos?
-                              // in this case they would have to be objects, squares = "square strings", count = 0
-                              // then
-                              // if the i in currentGameBoard is present in any of the winningCombos objects {
-                                //  obj.count += 1
-                                // if the obj.count of any winningCombos array === 3 {
-                                  //  run the function that tests for a winners
-                                  //  console.log("this one is a winner!", winningCombos[i]);
-                                  // }
-                                  // }
+// √ A way to check the Game’s board data for win conditions
+// - 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
+// √ create an array that holds all possible wins (this is an array of arrays; each data point will contain three box id's)
