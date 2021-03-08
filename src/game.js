@@ -14,6 +14,7 @@ class Game {
       {win: ["a1", "b2", "c3"], isWinner: false},
       {win: ["a3", "b2", "c1"], isWinner: false}
     ];
+    this.hasWinner = false;
   }
 
   startGame() { // add a button to start the game?
@@ -54,11 +55,14 @@ class Game {
   checkForWinningCombos(theWinArray) {
     for (var i = 0; i < this.winningCombos.length; i++) {
       if (theWinArray[0] === theWinArray[1] && theWinArray[1] === theWinArray[2]) {
-        console.log("one of these is true!");
-        console.log("theWinArray:", theWinArray);
+        // console.log("one of these is true!");
+        // console.log("theWinArray:", theWinArray);
         if (theWinArray === this.winningCombos[i].win) {
-          console.log("this.winningCombos[i] isWinner?", this.winningCombos[i].isWinner);
+          // console.log("this.winningCombos[i] isWinner?", this.winningCombos[i].isWinner);
           this.winningCombos[i].isWinner = true;
+          this.hasWinner = true;
+          console.log("someone won!");
+          console.log("this.currentPlayer:", this.currentPlayer);
         }
       }
     }
@@ -67,11 +71,13 @@ class Game {
   takeTurns() {
     if (this.currentPlayer === this.player1) {
       this.currentPlayer = this.player2;
+      // console.log("the current player is:", this.currentPlayer);
     } else if (this.currentPlayer === this.player2) {
       this.currentPlayer = this.player1;
+      // console.log("the current player is:", this.currentPlayer);
     }
-    console.log("the current player is:", this.currentPlayer);
   }
+
 
   playFiveRounds() {
     this.startGame();
@@ -85,7 +91,7 @@ class Game {
     this.takeTurns();
     this.placeToken(boxA3);
     this.takeTurns();
-    this.checkForWinningCombos();
+    // this.checkForWinningCombos();
   }
 
 }
