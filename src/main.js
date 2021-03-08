@@ -3,6 +3,7 @@ var game = new Game();
 
 // QUERY SELECTORS 🕵️‍♀️
 var boardBckgrnd = document.getElementById("boardBckgrnd");
+// var bttnNewGame = document.getElementById("bttnNewGame");
 var bttnStartGame = document.getElementById("bttnStartGame");
 var oWins = document.getElementById("oWins");
 var playerLine = document.getElementById("playerLine");
@@ -11,12 +12,14 @@ var xWins = document.getElementById("xWins");
 
 // EVENT LISTENERS 🎧
 boardBckgrnd.addEventListener("click", markTheBoard);
+// bttnNewGame.addEventListener("click", startGamePlay);
 bttnStartGame.addEventListener("click", startGamePlay);
 
 // GAME FUNCTIONS 🎴
 function startGamePlay() {
   game.startGame();
   bttnStartGame.classList.add("hidden");
+  // bttnNewGame.classList.add("hidden");
   turnLine.classList.remove("hidden");
   playerLine.classList.remove("hidden");
   playerLine.innerText = game.currentPlayer.token;
@@ -39,11 +42,13 @@ function announceGameEnd() {
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
     boardBckgrnd.classList.add("no-click");
     displayWins();
+    // bttnNewGame.classList.remove("hidden");
   } else if (game.playCount >= 9 && !game.hasWinner) {
     console.log("nobody won");
     playerLine.innerText = "This game is a draw. Nobody won!";
     boardBckgrnd.classList.add("no-click");
     displayWins();
+    // bttnNewGame.class.remove("hidden");
   }
 }
 
