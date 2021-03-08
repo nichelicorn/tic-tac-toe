@@ -64,6 +64,8 @@ function resetGameBoard() {
   // Game class data will be reassigned
   game.resetBoard(); // gameBoard data is reset; player wins have persisted
   // reset visuals on gameBoard
+  // boardBckgrnd.innerText = ""; NO - this removes the entire grid
+  boardBckgrnd.classList.remove("no-click");
 }
 
 
