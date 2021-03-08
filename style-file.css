@@ -12,10 +12,19 @@ body {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
+.no-click {
+  pointer-events: none;
+}
+
 h1 {
   color: mintcream;
   /* margin: .5em; */
-  margin: 1vw;
+  /* margin: 1vw; */
+  margin: 2vw 1vw 2vw 1vw;
 }
 
 .id {
@@ -57,14 +66,37 @@ h1 {
   flex-flow: wrap;
   justify-content: space-around;
   align-items: center;
+  /* FOR A HASH MARK LOOK ⤵ */
+  /* justify-content: space-between; */
+  /* align-items: center; */
   width: 40vw;
   height: 40vw;
-  /* background-color: honeydew; */
-  background: url(assets/chalk-rainbow.jpg);
+  /* background: url(assets/chalk-rainbow.jpg); */
+  background: url(assets/earth-chalk.jpg);
+  /* background: url(assets/rainbow-chalk-on-pavement.jpg); */
+  background-position: center;
+  margin: 2vw 1vw 2vw 1vw;
 }
 
 .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 10vw;
+  color: honeydew;
   width: 30%;
   height: 30%;
   background: url(assets/chalkboard-background.jpg);
+}
+
+.bttn-start-game {
+  width: 28vw;
+  height: 5vw;
+  /* border: 1px solid lime; */
+  border: none;
+  outline: none;
+  margin: 4vw 1vw 2vw 1vw;
+  background: none;
+  color: honeydew;
+  font-size: 3vw;
 }

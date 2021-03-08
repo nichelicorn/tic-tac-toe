@@ -12,13 +12,13 @@
     <article class="game-table">
 
       <section class="player-stats">
-        <h1 class="id">⚔︎'s</h1>
+        <h1 class="id">X's</h1>
         <h1>n wins</h1>
       </section>
 
       <main class="game-board">
         <h1 class="banner">tic tac toe!</h1>
-        <div class="board-bckgrnd">
+        <div class="board-bckgrnd" id="boardBckgrnd">
           <section class="box a1" id="a1"></section>
           <section class="box b1" id="b1"></section>
           <section class="box c1" id="c1"></section>
@@ -29,10 +29,13 @@
           <section class="box b3" id="b3"></section>
           <section class="box c3" id="c3"></section>
         </div>
+        <button type="button" class="bttn-start-game" id="bttnStartGame">start game!</button>
+        <h1 class="hidden" id="turnLine">whose turn is it?</h1>
+        <h1 class="hidden" id="playerLine">X or O</h1>
       </main>
 
       <section class="player-stats">
-        <h1 class="id">☮︎'s</h1>
+        <h1 class="id">O's</h1>
         <h1>n wins</h1>
       </section>
 

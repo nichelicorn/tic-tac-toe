@@ -2,23 +2,42 @@
 var game = new Game();
 
 // QUERY SELECTORS 🕵️‍♀️
-var boxA1 = document.getElementById("a1");
-var boxB1 = document.getElementById("b1");
-var boxC1 = document.getElementById("c1");
-var boxA2 = document.getElementById("a2");
-var boxB2 = document.getElementById("b2");
-var boxC2 = document.getElementById("c2");
-var boxA3 = document.getElementById("a3");
-var boxB3 = document.getElementById("b3");
-var boxC3 = document.getElementById("c3");
+var boardBckgrnd = document.getElementById("boardBckgrnd");
+var bttnStartGame = document.getElementById("bttnStartGame");
+var playerLine = document.getElementById("playerLine");
+var turnLine = document.getElementById("turnLine");
 
 // EVENT LISTENERS 🎧
-// The algorithm:
-// - Put a single handler on a container
-// - In the handler - check the source element using event.target
-// - If the event happened inside an element that interests us, then handle the event
+boardBckgrnd.addEventListener("click", markTheBoard);
+bttnStartGame.addEventListener("click", startGamePlay);
 
+// GAME FUNCTIONS 🎴
+function startGamePlay() {
+  game.startGame();
+  bttnStartGame.classList.add("hidden");
+  turnLine.classList.remove("hidden");
+  playerLine.classList.remove("hidden");
+  playerLine.innerText = game.currentPlayer.token;
+}
 
-// 🤷‍♀️VARIABLES I MIGHT WANT TO USE LATER
-// var clickedBox = event.target.closest('.box');
-// var clickedBox = event.target.id;
+function markTheBoard() {
+  var clickedBox = event.target.closest(".box");
+  game.placeToken(clickedBox);
+  clickedBox.innerText = game.currentPlayer.token;
+  announceGameEnd();
+  if (!game.hasWinner && game.playCount <= 8) {
+    game.takeTurns();
+    playerLine.innerText = game.currentPlayer.token;
+  }
+}
+
+function announceGameEnd() {
+  if (game.playCount >= 5 && game.hasWinner) {
+    turnLine.classList.add("hidden");
+    playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
+    boardBckgrnd.classList.add("no-click");
+  } else if (game.playCount >= 9 && !game.hasWinner) {
+    console.log("nobody won");
+    playerLine.innerText = "This game is a draw. Nobody won!";
+  }
+}
