@@ -26,9 +26,16 @@ bttnStartGame.addEventListener("click", startGamePlay);
 
 
 // GAME PLAY 🤾‍♀️
-// - when the start button is clicked, game.startGame will run
-// - a random player will be generated
-// - [ ] create a notification that will alert the generated player to take a turn!
+// - √ when the start button is clicked, game.startGame will run
+// - √ a random player will be generated
+// - √ create a notification that will alert the generated player to take a turn!
+// - NEXT when a box is clicked:
+    // - need an event listener for the boxes
+    // - when a box is clicked, that box becomes the clickedBox passed into placeToken (hopefully 🤞)
+  // - game.placeToken()
+  // - display currentPlayer.token
+  // - game.takeTurns();
+  // - playerLine.innerText should be updated with new currentPlayer
 
 function startGamePlay() {
   game.startGame();
