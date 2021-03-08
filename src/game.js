@@ -28,6 +28,16 @@ class Game {
     }
   }
 
+  takeTurns() {
+    if (this.currentPlayer === this.player1) {
+      this.currentPlayer = this.player2;
+      // console.log("the current player is:", this.currentPlayer);
+    } else if (this.currentPlayer === this.player2) {
+      this.currentPlayer = this.player1;
+      // console.log("the current player is:", this.currentPlayer);
+    }
+  }
+
   placeToken(clickedBox) {
     var clickedID = clickedBox.id;
     console.log("clickedID:", clickedID);
@@ -47,12 +57,12 @@ class Game {
       if (theWinArray.includes(clickedID)) {
         var marker = theWinArray.indexOf(clickedID);
         theWinArray.splice(marker, 1, this.currentPlayer.token);
-        this.checkForWinningCombos(theWinArray);
+        this.updateWinCondition(theWinArray);
       }
     }
   }
 
-  checkForWinningCombos(theWinArray) {
+  updateWinCondition(theWinArray) {
     for (var i = 0; i < this.winningCombos.length; i++) {
       if (theWinArray[0] === theWinArray[1] && theWinArray[1] === theWinArray[2]) {
         // console.log("one of these is true!");
@@ -63,21 +73,13 @@ class Game {
           this.hasWinner = true;
           console.log("someone won!");
           console.log("this.currentPlayer:", this.currentPlayer);
+          if (this.winningCombos[i].isWinner) {
+            console.log("the winning game:", this.winningCombos[i]);
+          }
         }
       }
     }
   }
-
-  takeTurns() {
-    if (this.currentPlayer === this.player1) {
-      this.currentPlayer = this.player2;
-      // console.log("the current player is:", this.currentPlayer);
-    } else if (this.currentPlayer === this.player2) {
-      this.currentPlayer = this.player1;
-      // console.log("the current player is:", this.currentPlayer);
-    }
-  }
-
 
   playFiveRounds() {
     this.startGame();
@@ -91,7 +93,7 @@ class Game {
     this.takeTurns();
     this.placeToken(boxA3);
     this.takeTurns();
-    // this.checkForWinningCombos();
+    // this.updateWinCondition();
   }
 
 }
