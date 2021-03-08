@@ -8,13 +8,10 @@ var playerLine = document.getElementById("playerLine");
 var turnLine = document.getElementById("turnLine");
 
 // EVENT LISTENERS 🎧
-// The algorithm:
-// - Put a single handler on a container
-// - In the handler - check the source element using event.target
-// - If the event happened inside an element that interests us, then handle the event
 boardBckgrnd.addEventListener("click", markTheBoard);
 bttnStartGame.addEventListener("click", startGamePlay);
 
+// GAME FUNCTIONS 🎴
 function startGamePlay() {
   game.startGame();
   bttnStartGame.classList.add("hidden");
@@ -38,14 +35,9 @@ function announceGameEnd() {
   if (game.playCount >= 5 && game.hasWinner) {
     turnLine.classList.add("hidden");
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
-    // need to disable further clicks on the board
-    boardBckgrnd.classList.add("no-click"); // this doesn't do anything
+    boardBckgrnd.classList.add("no-click");
   } else if (game.playCount >= 9 && !game.hasWinner) {
     console.log("nobody won");
     playerLine.innerText = "This game is a draw. Nobody won!";
   }
 }
-
-// 🤷‍♀️VARIABLES I MIGHT WANT TO USE LATER
-// var clickedBox = event.target.closest('.box');
-// var clickedBox = event.target.id;
