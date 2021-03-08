@@ -94,6 +94,23 @@ class Game {
     }
   }
 
+  resetBoard() {
+    this.gameBoard = [a1, b1, c1, a2, b2, c2, a3, b3, c3];
+    this.currentPlayer = undefined;
+    this.winningCombos = [
+      {win: ["a1", "b1", "c1"], isWinner: false},
+      {win: ["a2", "b2", "c2"], isWinner: false},
+      {win: ["a3", "b3", "c3"], isWinner: false},
+      {win: ["a1", "a2", "a3"], isWinner: false},
+      {win: ["b1", "b2", "b3"], isWinner: false},
+      {win: ["c1", "c2", "c3"], isWinner: false},
+      {win: ["a1", "b2", "c3"], isWinner: false},
+      {win: ["a3", "b2", "c1"], isWinner: false}
+    ];
+    this.hasWinner = false;
+    this.playCount = 0;
+  }
+
   playFiveRounds() {
     this.startGame();
     this.placeToken(boxA1);
@@ -155,7 +172,7 @@ class Game {
 // 5) can check for win conditions
   // 5a) if there is a win condition with 3 of the same token
   // 5b) the win condition flips to true and logs the winning player!
-  // 5c) WORKING ON DRAW SCENARIO
+  // 5c) game will recognize if 9 rounds have been played and there is no winner
 
 
 // ⚔️☮️ Tic Tac Toe - How to play
