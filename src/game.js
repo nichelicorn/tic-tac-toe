@@ -86,7 +86,7 @@ class Game {
         }
       }
       if (this.playCount === 9 && !this.winningCombos[i].isWinner){
-        console.log("Nobody has won this game!");
+        // console.log("Nobody has won this game!");
         // } else if (!this.winningCombos[i].isWinner) { // this condition doesn't work
           // console.log("No winners");
           }

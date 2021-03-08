@@ -57,8 +57,24 @@ function markTheBoard() {
   // console.log("clickedBox:", clickedBox);
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token; // displays token!! need to style the boxes though
-  game.takeTurns();
-  playerLine.innerText = game.currentPlayer.token;
+  announceGameEnd();
+  if (!game.hasWinner && game.playCount <= 8) {
+    game.takeTurns();
+    playerLine.innerText = game.currentPlayer.token;
+  }
+}
+
+function announceGameEnd() {
+  if (game.playCount >= 5 && game.hasWinner) {
+      // console.log("There's a winner!");
+      turnLine.classList.add("hidden");
+      // playerLine.classList.add("hidden");
+      playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
+  } else if (game.playCount >= 9 && !game.hasWinner) {
+    console.log("nobody won");
+    playerLine.innerText = "This game is a draw. Nobody won!";
+    // turnLine.classList.add("hidden");
+  }
 }
 
 // 🤷‍♀️VARIABLES I MIGHT WANT TO USE LATER
