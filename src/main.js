@@ -25,27 +25,36 @@ function markTheBoard() {
   var clickedBox = event.target.closest(".box");
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token;
-  announceGameEnd();
-  if (!game.hasWinner && game.playCount <= 8) {
+  if (!game.hasWinner && game.playCount < 9) {
     game.takeTurns();
     playerLine.innerText = game.currentPlayer.token; // occurs 2x - line 22, 31
   }
+  announceGameEnd();
 }
 
 function announceGameEnd() {
   if (game.playCount >= 5 && game.hasWinner) {
-    turnLine.classList.add("hidden");
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
-    boardBckgrnd.classList.add("no-click");
-    displayWins();
-    setTimeout(timeoutNextGame, 7000);
+    gameEndConditions();
+    // turnLine.classList.add("hidden"); // occurs 2x - line 37, 43
+    // boardBckgrnd.classList.add("no-click"); // occurs 2x, line 39, 45
+    // displayWins(); // occurs 2x, line 40, 46
+    // setTimeout(timeoutNextGame, 7000); // occurs 2x, line 41, 47
   } else if (game.playCount >= 9 && !game.hasWinner) {
-    turnLine.classList.add("hidden");
     playerLine.innerText = "This game is a draw. Nobody won!";
-    boardBckgrnd.classList.add("no-click");
-    displayWins();
-    setTimeout(timeoutNextGame, 7000);
+    gameEndConditions();
+    // turnLine.classList.add("hidden"); // occurs 2x - line 37, 43
+    // boardBckgrnd.classList.add("no-click"); // occurs 2x, line 39, 45
+    // displayWins(); // occurs 2x, line 40, 46
+    // setTimeout(timeoutNextGame, 7000); // occurs 2x, line 41, 47
   }
+}
+
+function gameEndConditions() {
+  turnLine.classList.add("hidden");
+  boardBckgrnd.classList.add("no-click");
+  displayWins();
+  setTimeout(timeoutNextGame, 7000);
 }
 
 function displayWins() {
