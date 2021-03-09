@@ -36,13 +36,14 @@ class Game {
   }
 
   placeToken(clickedBox) {
-    this.playCount++;
     var clickedID = clickedBox.id;
     for (var i = 0; i < this.gameBoard.length; i++) {
       var gameBoardID = this.gameBoard[i].id;
       if (clickedID === gameBoardID) {
         this.gameBoard.splice(i, 1, this.currentPlayer.token);
         this.spliceWin(clickedID);
+        this.playCount++;
+        console.log("playCount:", this.playCount);
       }
     }
   }

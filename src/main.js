@@ -18,7 +18,7 @@ function startGamePlay() {
   bttnStartGame.classList.add("hidden");
   turnLine.classList.remove("hidden");
   playerLine.classList.remove("hidden");
-  playerLine.innerText = game.currentPlayer.token; // occurs 2x - line 22, 31
+  playerLine.innerText = game.currentPlayer.token;
 }
 
 function markTheBoard(event) {
@@ -28,7 +28,7 @@ function markTheBoard(event) {
   clickedBox.classList.add("no-click");
   if (!game.hasWinner && game.playCount < 9) {
     game.takeTurns();
-    playerLine.innerText = game.currentPlayer.token; // occurs 2x - line 22, 31
+    playerLine.innerText = game.currentPlayer.token;
   }
   announceGameEnd();
 }
@@ -73,15 +73,16 @@ function timeoutNextGame() { // switched the order of line 70/71 to test fcn on 
 }
 
 function resetGameBoard() { // THIS FUNCTION WORKS!!! IF THE ATTEMPT ON LINE 90 DOESN'T WORK, YOU CAN STILL GO WITH THIS ONE 💖
-  a1.innerText = ""; // can I use a for loop to reset this?
-  b1.innerText = "";
-  c1.innerText = "";
-  a2.innerText = "";
-  b2.innerText = "";
-  c2.innerText = "";
-  a3.innerText = "";
-  b3.innerText = "";
-  c3.innerText = "";
+  // a1.innerText = ""; // can I use a for loop to reset this?
+  // b1.innerText = "";
+  // c1.innerText = "";
+  // a2.innerText = "";
+  // b2.innerText = "";
+  // c2.innerText = "";
+  // a3.innerText = "";
+  // b3.innerText = "";
+  // c3.innerText = "";
+  resetInnerText();
   a1.classList.remove("no-click");
   b1.classList.remove("no-click");
   c1.classList.remove("no-click");
@@ -94,6 +95,18 @@ function resetGameBoard() { // THIS FUNCTION WORKS!!! IF THE ATTEMPT ON LINE 90 
   playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
+}
+
+function resetInnerText() {
+  a1.innerText = ""; // can I use a for loop to reset this?
+  b1.innerText = "";
+  c1.innerText = "";
+  a2.innerText = "";
+  b2.innerText = "";
+  c2.innerText = "";
+  a3.innerText = "";
+  b3.innerText = "";
+  c3.innerText = "";
 }
 
 function displayStoredWins() {
