@@ -30,10 +30,12 @@ function markTheBoard() {
   var clickedBox = event.target.closest(".box");
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token;
+  clickedBox.classList.add("no-click");
   announceGameEnd();
   if (!game.hasWinner && game.playCount <= 8) {
     game.takeTurns();
     playerLine.innerText = game.currentPlayer.token;
+    clickedBox.classList.add("no-click");
   }
 }
 
