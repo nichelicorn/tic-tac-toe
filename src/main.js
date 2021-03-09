@@ -83,9 +83,12 @@ function resetGameBoard() {
 
 
 
+
 // 🏁 WHAT IS NEXT?
 
-
+// - [ ] local storage
+  // - √ have player1 and player2 saved to localStorage
+  // - [ ] if there is local storage data, retrieve and display player win count
 
 // - √ display player data in the sidebars
 // - √ target the player wins in both sidebars
