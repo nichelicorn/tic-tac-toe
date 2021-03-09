@@ -31,9 +31,11 @@ h1 {
 .player-stats {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 24%;
-  margin: 8vw 2vw 2vw 2vw;
+  margin: 2vw;
+  /* margin: 8vw 2vw 2vw 2vw; */
 }
 
 .game-table {
@@ -51,7 +53,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 73%;
-  margin: 2vw;
+  /* margin: 2vw; */
 }
 
 .board-bckgrnd {
