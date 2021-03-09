@@ -23,20 +23,20 @@ class Game {
     var whoFirst = Math.floor(Math.random() * 2);
     if (whoFirst === 0) {
       this.currentPlayer = this.player2;
-      console.log("O gets to go first!");
+      // console.log("O gets to go first!");
     } else {
       this.currentPlayer = this.player1;
-      console.log("X gets to go first!");
+      // console.log("X gets to go first!");
     }
   }
 
   takeTurns() {
     if (this.currentPlayer === this.player1) {
       this.currentPlayer = this.player2;
-      console.log("It's player 2's turn: O");
+      // console.log("It's player 2's turn: O");
     } else if (this.currentPlayer === this.player2) {
       this.currentPlayer = this.player1;
-      console.log("It's player 1's turn: X");
+      // console.log("It's player 1's turn: X");
     }
   }
 
@@ -104,7 +104,12 @@ class Game {
     ];
     this.hasWinner = false;
     this.playCount = 0;
-    console.log("Next game starts in 1000");
+    // console.log("Next game starts in 1000");
     // setTimeout(nextGame, 1000);
+  }
+
+  checkForStoredWins() {
+    this.player1.getWinsFromStorage();
+    this.player2.getWinsFromStorage();
   }
 }

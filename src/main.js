@@ -13,6 +13,7 @@ var gameBox = document.getElementById("gameBox")
 var resetMsg = document.getElementById("resetMsg");
 
 // EVENT LISTENERS 🎧
+window.addEventListener("load", displayStoredWins);
 boardBckgrnd.addEventListener("click", markTheBoard);
 bttnStartGame.addEventListener("click", startGamePlay);
 
@@ -44,7 +45,6 @@ function announceGameEnd() {
     displayWins();
     setTimeout(timeoutNextGame, 7000);
   } else if (game.playCount >= 9 && !game.hasWinner) {
-    // console.log("nobody won");
     turnLine.classList.add("hidden");
     playerLine.innerText = "This game is a draw. Nobody won!";
     boardBckgrnd.classList.add("no-click");
@@ -80,18 +80,24 @@ function resetGameBoard() {
   boardBckgrnd.classList.remove("no-click");
 }
 
-
-
+function displayStoredWins() {
+  if (localStorage.length > 0) {
+    game.checkForStoredWins();
+    displayWins();
+  }
+}
 
 // 🏁 WHAT IS NEXT?
 
-
+// - [ ] local storage
+  // - √ have player1 and player2 saved to localStorage
+  // - √ if there is local storage data, retrieve and display player win count
 
 // - √ display player data in the sidebars
 // - √ target the player wins in both sidebars
 // - √ update innerText to display the number of wins for both players
 // - [ ] when should this be called?
-// - [ ] eventually, on page load
+// - √  eventually, on page load
 // - √ for now, when the win happens, in announceGameEnd
 // - √ Automatically reset the game board to allow for a new game to be played after the previous game is won
 // √ Game class data will be reassigned
