@@ -42,7 +42,7 @@ class Game {
       var gameBoardID = this.gameBoard[i].id;
       if (clickedID === gameBoardID) {
         this.gameBoard.splice(i, 1, this.currentPlayer.token);
-        this.spliceWin(clickedID)
+        this.spliceWin(clickedID);
       }
     }
   }
@@ -68,10 +68,7 @@ class Game {
           }
         if (this.winningCombos[i].isWinner) {
           this.currentPlayer.saveWinsToStorage();
-          console.log(`${this.currentPlayer.token} is the winner!`);
         }
-      }
-      if (this.playCount === 9 && !this.winningCombos[i].isWinner){
       }
     }
   }

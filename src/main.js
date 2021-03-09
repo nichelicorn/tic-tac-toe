@@ -18,7 +18,7 @@ function startGamePlay() {
   bttnStartGame.classList.add("hidden");
   turnLine.classList.remove("hidden");
   playerLine.classList.remove("hidden");
-  playerLine.innerText = game.currentPlayer.token;
+  playerLine.innerText = game.currentPlayer.token; // occurs 2x - line 22, 31
 }
 
 function markTheBoard() {
@@ -28,7 +28,7 @@ function markTheBoard() {
   announceGameEnd();
   if (!game.hasWinner && game.playCount <= 8) {
     game.takeTurns();
-    playerLine.innerText = game.currentPlayer.token;
+    playerLine.innerText = game.currentPlayer.token; // occurs 2x - line 22, 31
   }
 }
 
