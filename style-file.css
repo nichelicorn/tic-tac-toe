@@ -23,6 +23,7 @@ body {
 h1 {
   opacity: 60%;
   font-size: 4vw;
+  text-align: center;
 }
 
 .player-stats {

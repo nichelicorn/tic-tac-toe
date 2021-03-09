@@ -7,6 +7,8 @@ var bttnStartGame = document.getElementById("bttnStartGame");
 var playerLine = document.getElementById("playerLine");
 var turnLine = document.getElementById("turnLine");
 
+var banner = document.getElementById("banner");
+
 // EVENT LISTENERS 🎧
 window.addEventListener("load", displayStoredWins);
 boardBckgrnd.addEventListener("click", markTheBoard);
@@ -48,7 +50,7 @@ function gameEndConditions() {
   boardBckgrnd.classList.add("no-click");
   displayWins();
   setTimeout(timeoutNextGame, 7000);
-
+  banner.innerText = "next game in 7 seconds...";
 }
 
 function displayWins() {
@@ -68,6 +70,7 @@ function timeoutNextGame() {
 function resetGameBoard() {
   resetInnerText();
   resetClicks();
+  banner.innerText = "play another game!";
   playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
