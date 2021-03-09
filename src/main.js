@@ -2,15 +2,14 @@
 var game = new Game();
 
 // QUERY SELECTORS 🕵️‍♀️
-var boardBckgrnd = document.getElementById("boardBckgrnd");
-var bttnStartGame = document.getElementById("bttnStartGame");
-var oWins = document.getElementById("oWins");
-var playerLine = document.getElementById("playerLine");
-var turnLine = document.getElementById("turnLine");
-var xWins = document.getElementById("xWins");
-var gameBox = document.getElementById("gameBox")
+var boardBckgrnd = document.getElementById("boardBckgrnd"); // 1) used for a click to run markTheBoard; 2) no-click added in announceGameEnd(); 3) which is removed in resetGameBoard()
+var bttnStartGame = document.getElementById("bttnStartGame"); // click starts gameplay
+// var oWins = document.getElementById("oWins"); // only used in displayWins() - can this live there?
+var playerLine = document.getElementById("playerLine"); // used in a lot of places for .classList.things and .innerText
+var turnLine = document.getElementById("turnLine"); // used in a few places for .classList.things and .innerText
+// var xWins = document.getElementById("xWins");// only used in displayWins() - can this live there?
 
-var resetMsg = document.getElementById("resetMsg");
+
 
 // EVENT LISTENERS 🎧
 window.addEventListener("load", displayStoredWins);
@@ -30,12 +29,12 @@ function markTheBoard() {
   var clickedBox = event.target.closest(".box");
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token;
-  clickedBox.classList.add("no-click");
+  // clickedBox.classList.add("no-click"); // this breaks the game after the second round starts - any box that was marked in the first game can't be marked in the next game;
   announceGameEnd();
   if (!game.hasWinner && game.playCount <= 8) {
     game.takeTurns();
     playerLine.innerText = game.currentPlayer.token;
-    clickedBox.classList.add("no-click");
+    // clickedBox.classList.add("no-click"); // this breaks the game after the second round starts - any box that was marked in the first game can't be marked in the next game;
   }
 }
 
@@ -56,8 +55,10 @@ function announceGameEnd() {
 }
 
 function displayWins() {
-  var xWinCount = game.player1.wins;
   var oWinCount = game.player2.wins;
+  var xWinCount = game.player1.wins;
+  var oWins = document.getElementById("oWins");
+  var xWins = document.getElementById("xWins");
   xWins.innerText = `${xWinCount}!`;
   oWins.innerText = `${oWinCount}!`;
 }
@@ -68,7 +69,7 @@ function timeoutNextGame() {
 }
 
 function resetGameBoard() {
-  a1.innerText = "";
+  a1.innerText = ""; // can I use a for loop to reset this?
   b1.innerText = "";
   c1.innerText = "";
   a2.innerText = "";
@@ -80,6 +81,7 @@ function resetGameBoard() {
   playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
+  // clickedID.classList.remove("no-click"); // if I used a for loop on the box.innerText, could something similar make this property usable as well?
 }
 
 function displayStoredWins() {
@@ -106,3 +108,11 @@ function displayStoredWins() {
 // - √ add timeout to start new game
 
 // - [ ] adjust CSS sizing - too big when in full screen mode
+
+
+
+
+
+// THESE QUERY SELECTORS WEREN'S BEING USED - TESTED AND STILL WORKS WITHOUT THESE 
+// var gameBox = document.getElementById("gameBox"); // this isn't used anywhere
+// var resetMsg = document.getElementById("resetMsg"); // this isn't used anywhere
