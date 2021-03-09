@@ -107,4 +107,9 @@ class Game {
     // console.log("Next game starts in 1000");
     // setTimeout(nextGame, 1000);
   }
+
+  checkForStoredWins() {
+    this.player1.getWinsFromStorage();
+    this.player2.getWinsFromStorage();
+  }
 }

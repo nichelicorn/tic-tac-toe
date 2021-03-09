@@ -15,11 +15,17 @@ class Player {
     localStorage.setItem("player2Object", stringifiedP2WinsToStore);
   }
 
-  retrieveWinsFromStorage() {
-    // this method will retrieve Player object from loaclStorage
-    var retrievedP1Wins = localStorage.getItem("player1Object");
-    var retrievedP2Wins = localStorage.getItem("player2Object");
-    var parsedP1Wins = JSON.parse(retrievedP1Wins);
-    var parsedP2Wins = JSON.parse(retrievedP2Wins);
+  getWinsFromStorage() {
+    for (var i = 0; i < localStorage.length; i++) {
+      var retrievedP1 = localStorage.getItem("player1Object");
+      var retrievedP2 = localStorage.getItem("player2Object");
+      var parsedP1Wins = JSON.parse(retrievedP1);
+      var parsedP2Wins = JSON.parse(retrievedP2);
+      if (parsedP1Wins.id === 1 && this.id === 1) {
+        this.wins = parsedP1Wins.wins;
+      } else if (parsedP2Wins.id === 0 && this.id === 0) {
+        this.wins = parsedP2Wins.wins;
+      }
+    }
   }
 }
