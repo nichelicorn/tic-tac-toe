@@ -1,5 +1,4 @@
 * {
-  /* border: 1px solid lavender; */
   font-family: 'Cabin Sketch', cursive;
   margin: 0;
 }
@@ -22,8 +21,6 @@ body {
 
 h1 {
   color: mintcream;
-  /* margin: .5em; */
-  /* margin: 1vw; */
   margin: 2vw 1vw 2vw 1vw;
 }
 
@@ -36,9 +33,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 24%;
-  /* margin: 1em; */
   margin: 8vw 2vw 2vw 2vw;
-  /* margin-top: 8vw; */
 }
 
 .game-table {
@@ -48,7 +43,6 @@ h1 {
 }
 
 .banner {
-  /* font-size: 3em; */
   font-size: 5vw;
 }
 
@@ -57,7 +51,6 @@ h1 {
   flex-direction: column;
   align-items: center;
   width: 73%;
-  /* margin: 1em; */
   margin: 2vw;
 }
 
@@ -66,14 +59,9 @@ h1 {
   flex-flow: wrap;
   justify-content: space-around;
   align-items: center;
-  /* FOR A HASH MARK LOOK ⤵ */
-  /* justify-content: space-between; */
-  /* align-items: center; */
   width: 40vw;
   height: 40vw;
-  /* background: url(assets/chalk-rainbow.jpg); */
   background: url(assets/earth-chalk.jpg);
-  /* background: url(assets/rainbow-chalk-on-pavement.jpg); */
   background-position: center;
   margin: 2vw 1vw 2vw 1vw;
 }
@@ -92,7 +80,6 @@ h1 {
 .bttn {
   width: 28vw;
   height: 5vw;
-  /* border: 1px solid lime; */
   border: none;
   outline: none;
   margin: 4vw 1vw 2vw 1vw;
