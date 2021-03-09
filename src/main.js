@@ -21,31 +21,41 @@ function startGamePlay() {
   playerLine.innerText = game.currentPlayer.token;
 }
 
-function markTheBoard() {
+function markTheBoard(event) {
   var clickedBox = event.target.closest(".box");
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token;
-  announceGameEnd();
-  if (!game.hasWinner && game.playCount <= 8) {
+  clickedBox.classList.add("no-click");
+  if (!game.hasWinner && game.playCount < 9) {
     game.takeTurns();
     playerLine.innerText = game.currentPlayer.token;
   }
+  announceGameEnd();
 }
 
 function announceGameEnd() {
   if (game.playCount >= 5 && game.hasWinner) {
-    turnLine.classList.add("hidden");
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
-    boardBckgrnd.classList.add("no-click");
-    displayWins();
-    setTimeout(timeoutNextGame, 7000);
+    gameEndConditions();
+    // turnLine.classList.add("hidden"); // occurs 2x - line 37, 43
+    // boardBckgrnd.classList.add("no-click"); // occurs 2x, line 39, 45
+    // displayWins(); // occurs 2x, line 40, 46
+    // setTimeout(timeoutNextGame, 7000); // occurs 2x, line 41, 47
   } else if (game.playCount >= 9 && !game.hasWinner) {
-    turnLine.classList.add("hidden");
     playerLine.innerText = "This game is a draw. Nobody won!";
-    boardBckgrnd.classList.add("no-click");
-    displayWins();
-    setTimeout(timeoutNextGame, 7000);
+    gameEndConditions();
+    // turnLine.classList.add("hidden"); // occurs 2x - line 37, 43
+    // boardBckgrnd.classList.add("no-click"); // occurs 2x, line 39, 45
+    // displayWins(); // occurs 2x, line 40, 46
+    // setTimeout(timeoutNextGame, 7000); // occurs 2x, line 41, 47
   }
+}
+
+function gameEndConditions() {
+  turnLine.classList.add("hidden");
+  boardBckgrnd.classList.add("no-click");
+  displayWins();
+  setTimeout(timeoutNextGame, 7000);
 }
 
 function displayWins() {
@@ -58,12 +68,20 @@ function displayWins() {
 }
 
 function timeoutNextGame() {
-  game.resetBoard();
   resetGameBoard();
+  game.resetBoard();
 }
 
 function resetGameBoard() {
-  a1.innerText = ""; // can I use a for loop to reset this?
+  resetInnerText();
+  resetClicks();
+  playerLine.classList.add("hidden");
+  bttnStartGame.classList.remove("hidden");
+  boardBckgrnd.classList.remove("no-click");
+}
+
+function resetInnerText() { // refactor this to use a for loop?
+  a1.innerText = "";
   b1.innerText = "";
   c1.innerText = "";
   a2.innerText = "";
@@ -72,10 +90,18 @@ function resetGameBoard() {
   a3.innerText = "";
   b3.innerText = "";
   c3.innerText = "";
-  playerLine.classList.add("hidden");
-  bttnStartGame.classList.remove("hidden");
-  boardBckgrnd.classList.remove("no-click");
-  // clickedID.classList.remove("no-click"); // if I used a for loop on the box.innerText, could something similar make this property usable in markTheBoard() as well?
+}
+
+function resetClicks() { // refactor this to use a for loop?
+  a1.classList.remove("no-click");
+  b1.classList.remove("no-click");
+  c1.classList.remove("no-click");
+  a2.classList.remove("no-click");
+  b2.classList.remove("no-click");
+  c2.classList.remove("no-click");
+  a3.classList.remove("no-click");
+  b3.classList.remove("no-click");
+  c3.classList.remove("no-click");
 }
 
 function displayStoredWins() {
@@ -86,12 +112,8 @@ function displayStoredWins() {
 }
 
 // 🏁 WHAT IS NEXT?
-
-// - [ ] refactor
-  // - [ ] looks like there is plenty of opportunity for helper functions in the main.js
-  // - [ ] review css for refactoring opportunities
-// - [ ] adjust CSS sizing - too big when in full screen mode
-// - [ ] try to fix bux that allows two clicks on the same box
+// - [ ] add timeout message alerting next game will start soon
+  // - [ ] replace tic tac toe! header for the timeout
 // - [ ] CSS fun!!
   // - [ ] Ahsoka/Anakin theme
   // - [ ] animated bars instead of stationary background (lightsabres?)

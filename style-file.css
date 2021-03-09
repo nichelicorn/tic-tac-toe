@@ -1,5 +1,6 @@
 * {
   font-family: 'Cabin Sketch', cursive;
+  color: palegreen;
   margin: 0;
 }
 
@@ -20,20 +21,17 @@ body {
 }
 
 h1 {
-  color: mintcream;
-  margin: 2vw 1vw 2vw 1vw;
-}
-
-.id {
+  opacity: 60%;
   font-size: 4vw;
 }
 
 .player-stats {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 24%;
-  margin: 8vw 2vw 2vw 2vw;
+  margin: 2vw;
 }
 
 .game-table {
@@ -42,16 +40,11 @@ h1 {
   height: 100%;
 }
 
-.banner {
-  font-size: 5vw;
-}
-
 .game-board {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 73%;
-  margin: 2vw;
 }
 
 .board-bckgrnd {
@@ -62,8 +55,8 @@ h1 {
   width: 40vw;
   height: 40vw;
   background: url(assets/earth-chalk.jpg);
+  opacity: 80%;
   background-position: center;
-  margin: 2vw 1vw 2vw 1vw;
 }
 
 .box {
@@ -71,7 +64,6 @@ h1 {
   justify-content: center;
   align-items: center;
   font-size: 10vw;
-  color: honeydew;
   width: 30%;
   height: 30%;
   background: url(assets/chalkboard-background.jpg);
@@ -84,6 +76,6 @@ h1 {
   outline: none;
   margin: 4vw 1vw 2vw 1vw;
   background: none;
-  color: honeydew;
+  opacity: 60%;
   font-size: 3vw;
 }
