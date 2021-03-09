@@ -37,17 +37,9 @@ function announceGameEnd() {
   if (game.playCount >= 5 && game.hasWinner) {
     playerLine.innerText = `${game.currentPlayer.token} is the Winner!`;
     gameEndConditions();
-    // turnLine.classList.add("hidden"); // occurs 2x - line 37, 43
-    // boardBckgrnd.classList.add("no-click"); // occurs 2x, line 39, 45
-    // displayWins(); // occurs 2x, line 40, 46
-    // setTimeout(timeoutNextGame, 7000); // occurs 2x, line 41, 47
   } else if (game.playCount >= 9 && !game.hasWinner) {
     playerLine.innerText = "This game is a draw. Nobody won!";
     gameEndConditions();
-    // turnLine.classList.add("hidden"); // occurs 2x - line 37, 43
-    // boardBckgrnd.classList.add("no-click"); // occurs 2x, line 39, 45
-    // displayWins(); // occurs 2x, line 40, 46
-    // setTimeout(timeoutNextGame, 7000); // occurs 2x, line 41, 47
   }
 }
 
@@ -56,6 +48,7 @@ function gameEndConditions() {
   boardBckgrnd.classList.add("no-click");
   displayWins();
   setTimeout(timeoutNextGame, 7000);
+
 }
 
 function displayWins() {
