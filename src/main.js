@@ -21,10 +21,11 @@ function startGamePlay() {
   playerLine.innerText = game.currentPlayer.token; // occurs 2x - line 22, 31
 }
 
-function markTheBoard() {
+function markTheBoard(event) {
   var clickedBox = event.target.closest(".box");
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token;
+  clickedBox.classList.add("no-click");
   if (!game.hasWinner && game.playCount < 9) {
     game.takeTurns();
     playerLine.innerText = game.currentPlayer.token; // occurs 2x - line 22, 31
@@ -81,6 +82,15 @@ function resetGameBoard() { // THIS FUNCTION WORKS!!! IF THE ATTEMPT ON LINE 90 
   a3.innerText = "";
   b3.innerText = "";
   c3.innerText = "";
+  a1.classList.remove("no-click");
+  b1.classList.remove("no-click");
+  c1.classList.remove("no-click");
+  a2.classList.remove("no-click");
+  b2.classList.remove("no-click");
+  c2.classList.remove("no-click");
+  a3.classList.remove("no-click");
+  b3.classList.remove("no-click");
+  c3.classList.remove("no-click");
   playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
@@ -95,11 +105,11 @@ function displayStoredWins() {
 
 // 🏁 WHAT IS NEXT?
 
-// - [ ] refactor
-  // - [ ] looks like there is plenty of opportunity for helper functions in the main.js
-  // - [ ] review css for refactoring opportunities
+// - [ ] fix bux that allows two clicks on the same box
+// - √ refactor js
+  // - √ looks like there is plenty of opportunity for helper functions in the main.js
 // - [ ] adjust CSS sizing - too big when in full screen mode
-// - [ ] try to fix bux that allows two clicks on the same box
+// - [ ] review css for refactoring opportunities
 // - [ ] CSS fun!!
   // - [ ] Ahsoka/Anakin theme
   // - [ ] animated bars instead of stationary background (lightsabres?)
