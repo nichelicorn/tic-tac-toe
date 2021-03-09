@@ -83,15 +83,16 @@ function resetGameBoard() { // THIS FUNCTION WORKS!!! IF THE ATTEMPT ON LINE 90 
   // b3.innerText = "";
   // c3.innerText = "";
   resetInnerText();
-  a1.classList.remove("no-click");
-  b1.classList.remove("no-click");
-  c1.classList.remove("no-click");
-  a2.classList.remove("no-click");
-  b2.classList.remove("no-click");
-  c2.classList.remove("no-click");
-  a3.classList.remove("no-click");
-  b3.classList.remove("no-click");
-  c3.classList.remove("no-click");
+  // a1.classList.remove("no-click");
+  // b1.classList.remove("no-click");
+  // c1.classList.remove("no-click");
+  // a2.classList.remove("no-click");
+  // b2.classList.remove("no-click");
+  // c2.classList.remove("no-click");
+  // a3.classList.remove("no-click");
+  // b3.classList.remove("no-click");
+  // c3.classList.remove("no-click");
+  resetClicks();
   playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
@@ -107,6 +108,18 @@ function resetInnerText() {
   a3.innerText = "";
   b3.innerText = "";
   c3.innerText = "";
+}
+
+function resetClicks() {
+  a1.classList.remove("no-click");
+  b1.classList.remove("no-click");
+  c1.classList.remove("no-click");
+  a2.classList.remove("no-click");
+  b2.classList.remove("no-click");
+  c2.classList.remove("no-click");
+  a3.classList.remove("no-click");
+  b3.classList.remove("no-click");
+  c3.classList.remove("no-click");
 }
 
 function displayStoredWins() {
