@@ -21,10 +21,10 @@ body {
 
 h1 {
   color: mintcream;
-  margin: 2vw 1vw 2vw 1vw;
+  /* margin: 2vw 1vw 2vw 1vw; */
 }
 
-.id {
+.wins {
   font-size: 4vw;
 }
 

@@ -99,7 +99,7 @@ function resetGameBoard() { // THIS FUNCTION WORKS!!! IF THE ATTEMPT ON LINE 90 
 }
 
 function resetInnerText() {
-  a1.innerText = ""; // can I use a for loop to reset this?
+  a1.innerText = "";
   b1.innerText = "";
   c1.innerText = "";
   a2.innerText = "";
@@ -131,7 +131,7 @@ function displayStoredWins() {
 
 // 🏁 WHAT IS NEXT?
 
-// - [ ] fix bux that allows two clicks on the same box
+// - √ fix bux that allows two clicks on the same box
 // - √ refactor js
   // - √ looks like there is plenty of opportunity for helper functions in the main.js
 // - [ ] adjust CSS sizing - too big when in full screen mode
