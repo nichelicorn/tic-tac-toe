@@ -1,7 +1,5 @@
 * {
   font-family: 'Cabin Sketch', cursive;
-  /* color: honeydew; */
-  /* color: mintcream; */
   color: palegreen;
   margin: 0;
 }
@@ -27,9 +25,6 @@ h1 {
   font-size: 4vw;
 }
 
-.wins {
-}
-
 .player-stats {
   display: flex;
   flex-direction: column;
@@ -43,10 +38,6 @@ h1 {
   display: flex;
   justify-content: center;
   height: 100%;
-}
-
-.banner {
-  /* font-size: 5vw; */
 }
 
 .game-board {

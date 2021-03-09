@@ -67,38 +67,20 @@ function displayWins() {
   oWins.innerText = `${oWinCount}!`;
 }
 
-function timeoutNextGame() { // switched the order of line 70/71 to test fcn on line 90
+function timeoutNextGame() {
   resetGameBoard();
   game.resetBoard();
 }
 
-function resetGameBoard() { // THIS FUNCTION WORKS!!! IF THE ATTEMPT ON LINE 90 DOESN'T WORK, YOU CAN STILL GO WITH THIS ONE 💖
-  // a1.innerText = ""; // can I use a for loop to reset this?
-  // b1.innerText = "";
-  // c1.innerText = "";
-  // a2.innerText = "";
-  // b2.innerText = "";
-  // c2.innerText = "";
-  // a3.innerText = "";
-  // b3.innerText = "";
-  // c3.innerText = "";
+function resetGameBoard() {
   resetInnerText();
-  // a1.classList.remove("no-click");
-  // b1.classList.remove("no-click");
-  // c1.classList.remove("no-click");
-  // a2.classList.remove("no-click");
-  // b2.classList.remove("no-click");
-  // c2.classList.remove("no-click");
-  // a3.classList.remove("no-click");
-  // b3.classList.remove("no-click");
-  // c3.classList.remove("no-click");
   resetClicks();
   playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
 }
 
-function resetInnerText() {
+function resetInnerText() { // refactor this to use a for loop?
   a1.innerText = "";
   b1.innerText = "";
   c1.innerText = "";
@@ -110,7 +92,7 @@ function resetInnerText() {
   c3.innerText = "";
 }
 
-function resetClicks() {
+function resetClicks() { // refactor this to use a for loop?
   a1.classList.remove("no-click");
   b1.classList.remove("no-click");
   c1.classList.remove("no-click");
@@ -130,12 +112,8 @@ function displayStoredWins() {
 }
 
 // 🏁 WHAT IS NEXT?
-
-// - √ fix bux that allows two clicks on the same box
-// - √ refactor js
-  // - √ looks like there is plenty of opportunity for helper functions in the main.js
-// - [ ] adjust CSS sizing - too big when in full screen mode
-// - [ ] review css for refactoring opportunities
+// - [ ] add timeout message alerting next game will start soon
+  // - [ ] replace tic tac toe! header for the timeout
 // - [ ] CSS fun!!
   // - [ ] Ahsoka/Anakin theme
   // - [ ] animated bars instead of stationary background (lightsabres?)
