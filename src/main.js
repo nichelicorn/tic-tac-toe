@@ -71,44 +71,19 @@ function timeoutNextGame() { // switched the order of line 70/71 to test fcn on 
   game.resetBoard();
 }
 
-// function resetGameBoard() { // THIS FUNCTION WORKS!!! IF THE ATTEMPT ON LINE 90 DOESN'T WORK, YOU CAN STILL GO WITH THIS ONE 💖
-//   a1.innerText = ""; // can I use a for loop to reset this?
-//   b1.innerText = "";
-//   c1.innerText = "";
-//   a2.innerText = "";
-//   b2.innerText = "";
-//   c2.innerText = "";
-//   a3.innerText = "";
-//   b3.innerText = "";
-//   c3.innerText = "";
-//   playerLine.classList.add("hidden");
-//   bttnStartGame.classList.remove("hidden");
-//   boardBckgrnd.classList.remove("no-click");
-//   // clickedID.classList.remove("no-click"); // if I used a for loop on the box.innerText, could something similar make this property usable in markTheBoard() as well?
-// }
-
-function resetGameBoard() {
-  // console.log("game.gameBoard.innerText:", game.gameBoard.innerText); // this is undefined
-  // console.log("");
-  // for (var i = 0; i < game.gameBoard.length; i++) {
-  //   game.gameBoard[i].innerText = ""; // doesn't seem like this did anything
-  //   console.log("gameBoard?:", game.gameBoard[i]); // logs the token, is a string
-  //   // console.log("gameBoard.innerText?", game.gameBoardID[i].innerText); // this is undefined
-  // }
-  // a1.innerText = ""; // can I use a for loop to reset this?
-  // b1.innerText = "";
-  // c1.innerText = "";
-  // a2.innerText = "";
-  // b2.innerText = "";
-  // c2.innerText = "";
-  // a3.innerText = "";
-  // b3.innerText = "";
-  // c3.innerText = "";
+function resetGameBoard() { // THIS FUNCTION WORKS!!! IF THE ATTEMPT ON LINE 90 DOESN'T WORK, YOU CAN STILL GO WITH THIS ONE 💖
+  a1.innerText = ""; // can I use a for loop to reset this?
+  b1.innerText = "";
+  c1.innerText = "";
+  a2.innerText = "";
+  b2.innerText = "";
+  c2.innerText = "";
+  a3.innerText = "";
+  b3.innerText = "";
+  c3.innerText = "";
   playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
-  // console.log("clickedID:", clickedID); // clickedID is not defined... don't really want to work on this too much longer... going to call it and go with the original function
-  // clickedID.classList.remove("no-click"); // if I used a for loop on the box.innerText, could something similar make this property usable in markTheBoard() as well?
 }
 
 function displayStoredWins() {
