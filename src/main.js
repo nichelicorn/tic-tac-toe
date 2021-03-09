@@ -30,12 +30,12 @@ function markTheBoard() {
   var clickedBox = event.target.closest(".box");
   game.placeToken(clickedBox);
   clickedBox.innerText = game.currentPlayer.token;
-  clickedBox.classList.add("no-click");
+  // clickedBox.classList.add("no-click"); // this breaks the game after the second round starts - any box that was marked in the first game can't be marked in the next game;
   announceGameEnd();
   if (!game.hasWinner && game.playCount <= 8) {
     game.takeTurns();
     playerLine.innerText = game.currentPlayer.token;
-    clickedBox.classList.add("no-click");
+    // clickedBox.classList.add("no-click"); // this breaks the game after the second round starts - any box that was marked in the first game can't be marked in the next game;
   }
 }
 
@@ -68,7 +68,7 @@ function timeoutNextGame() {
 }
 
 function resetGameBoard() {
-  a1.innerText = "";
+  a1.innerText = ""; // can I use a for loop to reset this?
   b1.innerText = "";
   c1.innerText = "";
   a2.innerText = "";
@@ -80,6 +80,7 @@ function resetGameBoard() {
   playerLine.classList.add("hidden");
   bttnStartGame.classList.remove("hidden");
   boardBckgrnd.classList.remove("no-click");
+  // clickedID.classList.remove("no-click"); // if I used a for loop on the box.innerText, could something similar make this property usable as well?
 }
 
 function displayStoredWins() {
