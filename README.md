@@ -78,3 +78,12 @@ _O_|_X_|_O_
 - [image - chalk rainbow background][https://media.istockphoto.com/photos/closeup-of-rainbow-chalk-arc-drawn-diagonally-on-asphalt-surface-picture-id90371999?k=6&m=90371999&s=170667a&w=0&h=T_MoK3-AVQxun7yrUEFwmJa1TfdqYQVXLVa5lRxtLaU=]
 
 - [alternate image - chalk rainbow](https://c8.alamy.com/comp/J05P76/rainbow-chalk-on-pavement-J05P76.jpg)
+
+
+
+// 🏁 WHAT IS NEXT?
+// - [ ] add timeout message alerting next game will start soon
+  // - [ ] replace tic tac toe! header for the timeout
+// - [ ] CSS fun!!
+  // - [ ] Ahsoka/Anakin theme
+  // - [ ] animated bars instead of stationary background (lightsabres?)
