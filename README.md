@@ -1,6 +1,8 @@
 # ❌ Tic Tac Toe! ⭕️
 #### Let's play Tic Tac Toe!
 
+![tic tac toe game](https://user-images.githubusercontent.com/63027000/110566904-e74be200-810d-11eb-9085-6b6f4108e428.gif)
+
 #### Overview & [Project](https://frontend.turing.io/projects/module-1/tic-tac-toe-solo.html) Goals
 - Now that you’ve got the main foundations down to build out a frontend application, it’s time to prove to yourself that you own those skills! You’re going to be building a Tic Tac Toe game from scratch!
 
@@ -17,6 +19,9 @@
 - Use your problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical challenge
 
 #### How does this work?
+
+![tic tac toe game](https://user-images.githubusercontent.com/63027000/110566904-e74be200-810d-11eb-9085-6b6f4108e428.gif)
+
 - Tic Tac Toe is a two-player game. First, decide who will be X's, and who will be O's. Then click the button and start playing!
 - When the start button is clicked, it will randomly decide who goes first.
 - The first player chooses a square and clicks to mark the square with their token.
