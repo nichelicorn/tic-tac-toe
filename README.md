@@ -54,6 +54,9 @@
 - It went really well! I had a lot of fun planning out the project, and found that the JavaScript was actually more interesting to me than working on the CSS. This project has given me inspiration to continue building games to practice logic and class interactions within JavaScript.
 - I got some good practice with project planning and pseudocoding, and will continue to work on those skills.
 
+![tic tac toe planning](https://user-images.githubusercontent.com/63027000/110567112-38f46c80-810e-11eb-8871-0acb905ded84.gif)
+
+
 #### Future Features
 - CSS fun!
 - Work on an Ahsoka/Anakin theme
