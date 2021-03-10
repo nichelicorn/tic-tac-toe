@@ -23,15 +23,20 @@ body {
 h1 {
   opacity: 60%;
   font-size: 4vw;
+  text-align: center;
 }
 
 .player-stats {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
   width: 24%;
   margin: 2vw;
+}
+
+.wins-hdr {
+  margin-top: 13vw;
 }
 
 .game-table {

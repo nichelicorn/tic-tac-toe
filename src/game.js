@@ -43,7 +43,6 @@ class Game {
         this.gameBoard.splice(i, 1, this.currentPlayer.token);
         this.spliceWin(clickedID);
         this.playCount++;
-        console.log("playCount:", this.playCount);
       }
     }
   }
