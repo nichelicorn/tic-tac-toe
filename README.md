@@ -1,5 +1,5 @@
 # ❌ Tic Tac Toe! ⭕️
-#### Let's play Tic Tac Toe!
+#### [Let's play Tic Tac Toe!](https://nichelicorn.github.io/tic-tac-toe/)
 
 ![tic tac toe game](https://user-images.githubusercontent.com/63027000/110566904-e74be200-810d-11eb-9085-6b6f4108e428.gif)
 
