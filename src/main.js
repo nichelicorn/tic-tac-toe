@@ -2,12 +2,11 @@
 var game = new Game();
 
 // QUERY SELECTORS 🕵️‍♀️
+var banner = document.getElementById("banner");
 var boardBckgrnd = document.getElementById("boardBckgrnd");
 var bttnStartGame = document.getElementById("bttnStartGame");
 var playerLine = document.getElementById("playerLine");
 var turnLine = document.getElementById("turnLine");
-
-var banner = document.getElementById("banner");
 
 // EVENT LISTENERS 🎧
 window.addEventListener("load", displayStoredWins);
@@ -76,7 +75,7 @@ function resetGameBoard() {
   boardBckgrnd.classList.remove("no-click");
 }
 
-function resetInnerText() { // refactor this to use a for loop?
+function resetInnerText() {
   a1.innerText = "";
   b1.innerText = "";
   c1.innerText = "";
@@ -88,7 +87,7 @@ function resetInnerText() { // refactor this to use a for loop?
   c3.innerText = "";
 }
 
-function resetClicks() { // refactor this to use a for loop?
+function resetClicks() {
   a1.classList.remove("no-click");
   b1.classList.remove("no-click");
   c1.classList.remove("no-click");
@@ -106,10 +105,3 @@ function displayStoredWins() {
     displayWins();
   }
 }
-
-// 🏁 WHAT IS NEXT?
-// - [ ] add timeout message alerting next game will start soon
-  // - [ ] replace tic tac toe! header for the timeout
-// - [ ] CSS fun!!
-  // - [ ] Ahsoka/Anakin theme
-  // - [ ] animated bars instead of stationary background (lightsabres?)
