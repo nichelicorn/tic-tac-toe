@@ -62,7 +62,7 @@
 - Work on an Ahsoka/Anakin theme
 
 #### Credits
-##### Co-Contributors
+##### Creator
 - [🌿 Nichele D](https://github.com/nichelicorn)
 ##### Mentors
 - [⛷ Rachael Thomas](https://github.com/rachael-t)
