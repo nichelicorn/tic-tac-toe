@@ -64,15 +64,3 @@
 
 ###### This project was created for [Turing School of Software and Design](https://turing.io/)
 ###### Date 9MARCH2021 🌱
-
-
-
-
-<table>
-    <tr>
-         <td> Nichele D <a href="https://github.com/nichelicorn">GH</td>
-    </tr>
-    <tr>
-    <td><img src="https://avatars.githubusercontent.com/u/63027000?s=400&u=c8de3fb06a34aa98a4ceb53a507136da3b6743e9&v=4" alt="Nichelicorn GH img" width="150" height="auto" /></td>
-    </tr>
-</table>
