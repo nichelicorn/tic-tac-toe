@@ -1,89 +1,78 @@
-# tic-tac-toe
-It's tic tac toe game! Play with two or by yourself! Have fun for hours!
+# ❌ Tic Tac Toe! ⭕️
+#### Let's play Tic Tac Toe!
 
+#### Overview & [Project](https://frontend.turing.io/projects/module-1/tic-tac-toe-solo.html) Goals
+- Now that you’ve got the main foundations down to build out a frontend application, it’s time to prove to yourself that you own those skills! You’re going to be building a Tic Tac Toe game from scratch!
 
-### HOW TO PLAY TIC TAC TOE
+#### Learning Goals
+- My learning goal for this project was to fully implement the concepts introduced in Mod 1 and create a working Tic Tac Toe game.
+- My secondary goal was to jump into CSS animations, time permitting.
 
-⌗ Data model or 👀 DOM?
-- 1) Two players, each has a different token
-  - ex: first player, token = X; next player, token = O
-- 2) One game board: a grid of nine squares, three high by three wide
-- 3) A row of three tokens in any direction (horizontal, vertical, diagonal) results in a win!
-- 4) A draw is also possible, and results when neither player is able to make a row of three tokens
-- 5) The game begins by randomly selecting the first player
-- 6) The first player chooses a square on the board and clicks to mark the square with their token
-- 7) The token cannot be removed once placed!
-- 8) There will be a slight delay, then the next player is alerted to take their turn
-- 9) The next player chooses a square on the board and clicks to mark their square
-- the board might now look something like this:
-___|_X_|___
-___|___|___
-_O_|___|___
-- 10) NO WINS POSSIBLE AT THIS STAGE
-- 11) First player takes another turn
-- 12) Next player takes another turn
-- 13) Board now has four tokens placed
-_X_|_X_|_O_
-___|___|___
-_O_|___|___
-- 14) NO WINS POSSIBLE AT THIS STAGE
-- 15) A win is not possible for an individual player until three of their tokens have been placed
-- 16) First player takes another turn
-- 17) Board now has 5 tokens placed, and there is a possiblity for a win!
-- 18) Evaluate location of first players tokens
-- 19) If a row of 3 has been created, alert that first player has won!
-- 20) Then add a win to first player's win count
-- Board looks like this, though:
-_X_|_X_|_O_
-___|_X_|___
-_O_|___|___
-- 21) Next player takes another turn
-- 22) Check board again for a win. If a row of 3 has been created, alert that next player has won!
-- 23) then add a win to next player's win count
-- Board looks like this, though:
-_X_|_X_|_O_
-___|_X_|___
-_O_|___|_O____
-- 24) First player takes another turn
-- 25) Did first player win?
-- No:
-_X_|_X_|_O_
-___|_X_|_X_
-_O_|___|_O___
-- Next player takes a turn
-- Did next player win?
-- No:
-_X_|_X_|_O_
-_O_|_X_|_X_
-_O_|___|_O___
-- First player's turn again
-- Win?
-- 26) Yes?
-_X_|_X_|_O_
-_O_|_X_|_X_
-_O_|_X_|_O_
-- 27) Mark line through winning rainbow
-- 28) Add win to first player's win count
-- 29) Delay, then wipe the board and restart with next player going First
-- OR
-- 29) Have a popup that asks if you want to play again
+#### Why was this project created?
+- DRY JavaScript
+- localStorage to persist data
+- event delegation to handle similar event listeners
+- Understand the difference between the data model and how the data is displayed on the DOM
+- Iterate through/filter DOM elements using for loops
+- Use your problem solving process to break down large problems, solve things step by step, and trust yourself to not rely on an outside “answer” to a logical challenge
 
+#### How does this work?
+- Tic Tac Toe is a two-player game. First, decide who will be X's, and who will be O's. Then click the button and start playing!
+- When the start button is clicked, it will randomly decide who goes first.
+- The first player chooses a square and clicks to mark the square with their token.
+- The next player is alerted to take a turn! Once the second player chooses a square, they will click to mark the square with their token.
+- If a player creates a row of three tokens in any direction, they win the game! A notification will appear before automatically resetting the game board.
 
-# RESOURCES
+#### Want to contribute?
+- Fork this repository
+- Clone into your machine and CD into the directory
+- Make your changes and create a pull request! Your code will be reviewed by one of the project contributors.
 
-- [FONT - Cabin Sketch](https://fonts.google.com/specimen/Cabin+Sketch?preview.text=player%20one%20%2F%20player%20two%20%2F%20X%20x%20%2F%20O%20o&preview.text_type=custom)
+#### Technologies Used
+- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/javascript)
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
+- [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)
 
-- [image - chalkboard background](https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-OpFqYklSD-k%2FUQcCXvRs9UI%2FAAAAAAAAQs8%2FuD3Mc7RhLl4%2Fs1600%2FChalkboard-background.jpg&f=1&nofb=1)
+#### Project Reflection
+- Overall, this project went really well! My previous project experiences in this Mod gave me some good tools when planning this project.
+- I started out with ProCreate, drawing out my wireframe, and outlining the steps to play tic tac toe. I really enjoyed using this tool in the planning process, and it helped me work out some logic challenges that came up during creation of the game logic.
 
-- [image - chalk rainbow background][https://media.istockphoto.com/photos/closeup-of-rainbow-chalk-arc-drawn-diagonally-on-asphalt-surface-picture-id90371999?k=6&m=90371999&s=170667a&w=0&h=T_MoK3-AVQxun7yrUEFwmJa1TfdqYQVXLVa5lRxtLaU=]
+##### Wins
+- I'm proud of my tic tac toe game! I was able to work through each JavaScript file separately, and found that exercise helpful in understanding how the code can work together, and why each Class is kept separately.
+- I didn't make exceptionally quick progress, but felt that I was keeping a steady pace. Because I had extensively planned and pseudocoded, I was able to have several long breaks in my days. The time away from my desk meant that I was more productive when I did sit down to work.
 
-- [alternate image - chalk rainbow](https://c8.alamy.com/comp/J05P76/rainbow-chalk-on-pavement-J05P76.jpg)
+##### Challenges
+- I would have liked to have more time to dive into some CSS challenges.
+- There are two very long reset conditionals at the end of main.js that I would like to refactor. Solving the problem of preventing duplicate clicks was more challenging to solve, and I made a choice not to refactor this portion of the code, given the stage in the project phase.
+
+##### Overall Impressions
+- It went really well! I had a lot of fun planning out the project, and found that the JavaScript was actually more interesting to me than working on the CSS. This project has given me inspiration to continue building games to practice logic and class interactions within JavaScript.
+- I got some good practice with project planning and pseudocoding, and will continue to work on those skills.
+
+#### Future Features
+- CSS fun!
+- Work on an Ahsoka/Anakin theme
+
+#### Credits
+##### Co-Contributors
+- [🌿 Nichele D](https://github.com/nichelicorn)
+##### Mentors
+- [⛷ Rachael Thomas](https://github.com/rachael-t)
+##### Project Manager
+- [🧵 Kayla Wood](https://github.com/kaylaewood)
+**************************************************************************
+
+###### This project was created for [Turing School of Software and Design](https://turing.io/)
+###### Date 9MARCH2021 🌱
 
 
 
-// 🏁 WHAT IS NEXT?
-// - [ ] add timeout message alerting next game will start soon
-  // - [ ] replace tic tac toe! header for the timeout
-// - [ ] CSS fun!!
-  // - [ ] Ahsoka/Anakin theme
-  // - [ ] animated bars instead of stationary background (lightsabres?)
+
+<table>
+    <tr>
+         <td> Nichele D <a href="https://github.com/nichelicorn">GH</td>
+    </tr>
+    <tr>
+    <td><img src="https://avatars.githubusercontent.com/u/63027000?s=400&u=c8de3fb06a34aa98a4ceb53a507136da3b6743e9&v=4" alt="Nichelicorn GH img" width="150" height="auto" /></td>
+    </tr>
+</table>
